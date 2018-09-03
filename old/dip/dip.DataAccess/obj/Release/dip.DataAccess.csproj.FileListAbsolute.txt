@@ -1,0 +1,6 @@
+C:\Work\dip-mobile\dev\dip\dip.DataAccess\bin\Release\dip.DataAccess.dll
+C:\Work\dip-mobile\dev\dip\dip.DataAccess\bin\Release\dip.DataAccess.pdb
+C:\Work\dip-mobile\dev\dip\dip.DataAccess\obj\Release\dip.DataAccess.csprojAssemblyReference.cache
+C:\Work\dip-mobile\dev\dip\dip.DataAccess\obj\Release\dip.DataAccess.csproj.CoreCompileInputs.cache
+C:\Work\dip-mobile\dev\dip\dip.DataAccess\obj\Release\dip.DataAccess.dll
+C:\Work\dip-mobile\dev\dip\dip.DataAccess\obj\Release\dip.DataAccess.pdb

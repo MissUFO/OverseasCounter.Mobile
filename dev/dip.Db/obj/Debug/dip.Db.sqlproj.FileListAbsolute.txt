@@ -1,0 +1,9 @@
+C:\Work\dip-mobile\dev\dip\dip.Db\bin\Debug\dip.Db.dacpac
+C:\Work\dip-mobile\dev\dip\dip.Db\bin\Debug\dip.Db.dll
+C:\Work\dip-mobile\dev\dip\dip.Db\bin\Debug\dip.Db.pdb
+C:\Work\dip-mobile\dev\dip\dip.Db\obj\Debug\Model.xml
+C:\Work\dip-mobile\dev\dip\dip.Db\obj\Debug\refactor.xml
+C:\Work\dip-mobile\dev\dip\dip.Db\obj\Debug\postdeploy.sql
+C:\Work\dip-mobile\dev\dip\dip.Db\obj\Debug\predeploy.sql
+C:\Work\dip-mobile\dev\dip\dip.Db\obj\Debug\dip.Db.dll
+C:\Work\dip-mobile\dev\dip\dip.Db\obj\Debug\dip.Db.pdb

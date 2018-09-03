@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{12357B1E-8D86-494D-9816-68D9DD4B3FCD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>dip.DataAccess</RootNamespace>
+    <AssemblyName>dip.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConnectionString.cs" />
+    <Compile Include="DataManager\Extension\DataAccessExtension.cs" />
+    <Compile Include="DataManager\Extension\DataObjectExtension.cs" />
+    <Compile Include="DataManager\Implementation\DataManager.cs" />
+    <Compile Include="DataManager\Interface\IDataManager.cs" />
+    <Compile Include="DataObject\Enum\LogActionType.cs" />
+    <Compile Include="DataObject\Implementation\Country.cs" />
+    <Compile Include="DataObject\Implementation\CountryVisaType.cs" />
+    <Compile Include="DataObject\Implementation\CountryFinancialPeriod.cs" />
+    <Compile Include="DataObject\Implementation\Settings.cs" />
+    <Compile Include="DataObject\Implementation\Entity.cs" />
+    <Compile Include="DataObject\Implementation\Error.cs" />
+    <Compile Include="DataObject\Implementation\Log.cs" />
+    <Compile Include="DataObject\Implementation\Days.cs" />
+    <Compile Include="DataObject\Implementation\UserCountryVisa.cs" />
+    <Compile Include="DataObject\Implementation\UserTrackingSchedule.cs" />
+    <Compile Include="DataObject\Implementation\User.cs" />
+    <Compile Include="DataObject\Interface\IEntity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\Implementation\SettingsRepository.cs" />
+    <Compile Include="Repository\Implementation\ErrorRepository.cs" />
+    <Compile Include="Repository\Implementation\LogRepository.cs" />
+    <Compile Include="Repository\Implementation\UserRepository.cs" />
+    <Compile Include="Repository\Interface\IRepository.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

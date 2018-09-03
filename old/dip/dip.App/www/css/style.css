@@ -1,0 +1,164 @@
+ /*********************
+* Login form 
+ *********************/
+
+.login-black {
+    background-color: #FFFFFF;
+}
+
+    .login-black .list,
+    .login-black .list div.item {
+        background-color: #FFFFFF;
+        border: 0;
+    }
+
+.login-black .list .input-label {
+  color: white;
+  padding-left: 15px;
+  font-size: small;
+}
+
+.login-black .item-input {
+  padding: 6px 0 5px 6px;
+}
+
+.login-black .item-input span {
+  padding-right: 5px;
+}
+
+ /*********************
+ * Search box 
+ *********************/
+
+.search-label {
+  font-size: smaller;
+  color: gray;
+  text-align: right;
+  width: 100%;
+  padding-right: 10px;
+}
+
+/*********************
+ * ITEM 
+ *********************/
+
+.item-avatar > img:first-child, .item-avatar .item-image, .item-avatar .item-content > img:first-child, .item-avatar .item-content .item-image, .item-avatar-left > img:first-child, .item-avatar-left .item-image, .item-avatar-left .item-content > img:first-child, .item-avatar-left .item-content .item-image {
+  border: 0px !important;
+  border-radius: 0 !important;
+}
+
+.button {
+  line-height: 18px;
+  padding: 10px;
+}
+/*********************
+ * Back button
+ *********************/
+button.back-button .back-text {
+  display: none !important;
+}
+
+/*********************
+ * Slider
+ *********************/
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.slides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #444;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: -20px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #444;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor:pointer;
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+ /*********************
+ * Other
+ *********************/
+
+ .button-orange {
+   background-color: #FFC10E !important;
+ }

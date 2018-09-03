@@ -1,0 +1,26 @@
+﻿<ion-view view-title="О приложении" hide-nav-bar="false" enable-menu-with-back-views="true" hide-back-button="true">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content has-header="true">
+    <div class="card">
+      <div class="item item-text-wrap">
+        Не нашли решение проблемы?
+      </div>
+    </div>
+    <div class="card">
+      <div class="item item-divider">
+        Позвонить в службу поддержки:
+      </div>
+      <div class="item item-text-wrap">
+        <a href="tel:{{helpdeskPhone}}" >{{helpdeskPhone}}</a>
+      </div>
+      <div class="item item-divider">
+        Оформить заявку:
+      </div>
+      <div class="item item-text-wrap">
+        <a href="{{helpdeskUrl}}" >{{helpdeskUrl}}</a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
