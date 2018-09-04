@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Default</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ItemType>GenericProject</ItemType>
+    <ProjectGuid>{DA3F7C4B-7193-4E51-A30D-8B876EFF9B90}</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Default|AnyCPU' ">
+    <OutputPath>.\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="Tables\Country.sql" />
+    <None Include="Tables\CountryFinancialPeriod.sql" />
+    <None Include="Tables\CountryVisaType.sql" />
+    <None Include="Tables\Days.sql" />
+    <None Include="Tables\Error.sql" />
+    <None Include="Tables\Log.sql" />
+    <None Include="Tables\LogActionType.sql" />
+    <None Include="Tables\Settings.sql" />
+    <None Include="Tables\User.sql" />
+    <None Include="Tables\UserCountryVisa.sql" />
+    <None Include="Tables\UserTrackingSchedule.sql" />
+    <None Include="Stored Procedures\Error_AddEdit.sql" />
+    <None Include="Stored Procedures\Log_AddEdit.sql" />
+    <None Include="Stored Procedures\Settings_GetByKey.sql" />
+    <None Include="Stored Procedures\Settings_List.sql" />
+    <None Include="Stored Procedures\User_AddEdit.sql" />
+    <None Include="Stored Procedures\User_Get.sql" />
+    <None Include="Stored Procedures\User_Login.sql" />
+    <None Include="Security\auth.sql" />
+    <None Include="Security\conf.sql" />
+    <None Include="Security\dict.sql" />
+    <None Include="Security\enum.sql" />
+    <None Include="Security\logs.sql" />
+    <None Include="Security\map.sql" />
+    <None Include="content.postdeploy.sql" />
+  </ItemGroup>
+</Project>

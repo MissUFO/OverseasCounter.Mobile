@@ -1,6 +1,11 @@
-C:\Work\dip-mobile\dev\dip\dip.DataAccess\bin\Debug\dip.DataAccess.dll
-C:\Work\dip-mobile\dev\dip\dip.DataAccess\bin\Debug\dip.DataAccess.pdb
-C:\Work\dip-mobile\dev\dip\dip.DataAccess\obj\Debug\dip.DataAccess.csprojAssemblyReference.cache
-C:\Work\dip-mobile\dev\dip\dip.DataAccess\obj\Debug\dip.DataAccess.csproj.CoreCompileInputs.cache
-C:\Work\dip-mobile\dev\dip\dip.DataAccess\obj\Debug\dip.DataAccess.dll
-C:\Work\dip-mobile\dev\dip\dip.DataAccess\obj\Debug\dip.DataAccess.pdb
+C:/Work/dip-mobile/dev/dip/dip.DataAccess/bin/Debug/dip.DataAccess.dll
+C:/Work/dip-mobile/dev/dip/dip.DataAccess/bin/Debug/dip.DataAccess.pdb
+C:/Work/dip-mobile/dev/dip/dip.DataAccess/obj/Debug/dip.DataAccess.csprojAssemblyReference.cache
+C:/Work/dip-mobile/dev/dip/dip.DataAccess/obj/Debug/dip.DataAccess.csproj.CoreCompileInputs.cache
+C:/Work/dip-mobile/dev/dip/dip.DataAccess/obj/Debug/dip.DataAccess.dll
+C:/Work/dip-mobile/dev/dip/dip.DataAccess/obj/Debug/dip.DataAccess.pdb
+/Users/smetaninatv/Work/overseascounter/dev/dip.DataAccess/bin/Debug/dip.DataAccess.dll
+/Users/smetaninatv/Work/overseascounter/dev/dip.DataAccess/bin/Debug/dip.DataAccess.pdb
+/Users/smetaninatv/Work/overseascounter/dev/dip.DataAccess/obj/Debug/dip.DataAccess.csproj.CoreCompileInputs.cache
+/Users/smetaninatv/Work/overseascounter/dev/dip.DataAccess/obj/Debug/dip.DataAccess.dll
+/Users/smetaninatv/Work/overseascounter/dev/dip.DataAccess/obj/Debug/dip.DataAccess.pdb

@@ -1,0 +1,40 @@
+﻿<Properties StartupConfiguration="{1EB9C951-AC0F-4CA3-842F-4B140CB269CB}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="dip.Mobile/src/app/app.component.ts">
+    <Files>
+      <File FileName="dip.Mobile/src/app/tabs/tabs.page.html" Line="10" Column="13" />
+      <File FileName="dip.Mobile/src/app/tabs/tabs.module.ts" Line="22" Column="22" />
+      <File FileName="dip.Mobile/src/app/trip-add/trip-add.module.ts" Line="19" Column="31" />
+      <File FileName="dip.Mobile/src/app/trip-add/trip-add.page.html" Line="1" Column="1" />
+      <File FileName="dip.Mobile/src/app/trip-add/trip-add.page.scss" Line="1" Column="1" />
+      <File FileName="dip.Mobile/src/app/trip-add/trip-add.page.ts" Line="4" Column="18" />
+      <File FileName="dip.Mobile/src/app/trip-add/trip-add.page.spec.ts" Line="1" Column="1" />
+      <File FileName="dip.Mobile/tslint.json" Line="1" Column="1" />
+      <File FileName="dip.Mobile/tsconfig.json" Line="1" Column="1" />
+      <File FileName="dip.Mobile/package.json" Line="1" Column="1" />
+      <File FileName="dip.Mobile/src/app/app.component.ts" Line="5" Column="1" />
+      <File FileName="dip.Mobile/src/app/login/login.module.ts" Line="25" Column="19" />
+      <File FileName="dip.Mobile/src/app/login/login.page.ts" Line="14" Column="40" />
+      <File FileName="dip.Mobile/src/app/login/login.page.html" Line="1" Column="1" />
+      <File FileName="dip.Mobile/src/app/profile/profile.page.ts" Line="10" Column="5" />
+      <File FileName="dip.Mobile/src/app/home/home.page.ts" Line="26" Column="1" />
+      <File FileName="dip.Mobile/src/app/home/home.module.ts" Line="6" Column="57" />
+      <File FileName="dip.Mobile/src/app/app.module.ts" Line="1" Column="1" />
+      <File FileName="dip.Mobile/src/app/app-routing.module.ts" Line="1" Column="1" />
+      <File FileName="dip.Mobile/src/app/app.component.html" Line="1" Column="1" />
+      <File FileName="dip.Mobile/src/app/profile/profile.module.ts" Line="16" Column="5" />
+      <File FileName="dip.Mobile/src/app/home/home.page.spec.ts" Line="1" Column="1" />
+      <File FileName="dip.Mobile/src/app/app.component.spec.ts" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Services.dip.WebAPI PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|Android" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <DisabledProjects>
+    <String>dip.Db/dip.Db.sqlproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.ItemProperties.Mobile.dip.Mobile PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>
