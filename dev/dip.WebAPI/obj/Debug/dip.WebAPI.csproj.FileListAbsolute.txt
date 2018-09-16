@@ -84,7 +84,8 @@ C:/Work/dip-mobile/dev/dip/dip.WebAPI/obj/Debug/dip.WebAPI.pdb
 /Users/smetaninatv/Work/overseascounter/dev/dip.WebAPI/bin/System.Net.Http.Formatting.xml
 /Users/smetaninatv/Work/overseascounter/dev/dip.WebAPI/bin/System.Web.Http.xml
 /Users/smetaninatv/Work/overseascounter/dev/dip.WebAPI/bin/System.Web.Http.WebHost.xml
-/Users/smetaninatv/Work/overseascounter/dev/dip.WebAPI/obj/Debug/dip.WebAPI.csprojResolveAssemblyReference.cache
 /Users/smetaninatv/Work/overseascounter/dev/dip.WebAPI/obj/Debug/dip.WebAPI.csproj.CoreCompileInputs.cache
 /Users/smetaninatv/Work/overseascounter/dev/dip.WebAPI/obj/Debug/dip.WebAPI.dll
 /Users/smetaninatv/Work/overseascounter/dev/dip.WebAPI/obj/Debug/dip.WebAPI.pdb
+/Users/smetaninatv/Work/overseascounter/dev/dip.WebAPI/obj/Debug/dip.WebAPI.csprojAssemblyReference.cache
+/Users/smetaninatv/Work/overseascounter/dev/dip.WebAPI/obj/Debug/dip.WebAPI.csproj.CopyComplete

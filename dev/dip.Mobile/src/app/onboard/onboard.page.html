@@ -1,0 +1,42 @@
+<ion-header no-border>
+    <ion-toolbar>
+        <ion-buttons slot="end">
+            <ion-button color='primary' (click)="startApp()" [hidden]="!showSkip">Пропустить</ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content padding>
+    <ion-slides #slides (ionSlideDidChange)="onSlideChangeStart($event)" pager="false">
+        <ion-slide>
+            <img src="assets/img/onboard-slidebox-img-1.png" class="slide-image" />
+            <h2 class="slide-title">
+                Что это?
+            </h2>
+            <p>
+               Это приложение поможет вам <b>автоматически</b> посчитать дни, проведенные в стране или за ее пределами.
+            </p>
+        </ion-slide>
+        <ion-slide>
+            <img src="assets/img/onboard-slidebox-img-2.png" class="slide-image" />
+            <h2 class="slide-title">Зачем это нужно?</h2>
+            <p>
+                Например, для подтверждения налогового резиденства или контроля дней, уже проведенных в стране по мульти, студенческим, рабочим и туристическим многодневным визам.
+            </p>
+        </ion-slide>
+        <ion-slide>
+            <img src="assets/img/onboard-slidebox-img-3.png" class="slide-image" />
+            <h2 class="slide-title">Как это работает?</h2>
+            <p>
+                Приложение автоматически определяет ваше <b>местоположение</b> и ведет <b>подсчет</b> дней. Ранее осуществленные поездки вы cможете внести в приложение вручную.
+            </p>
+        </ion-slide>
+        <ion-slide>
+            <img src="assets/img/onboard-slidebox-img-4.png" class="slide-image" />
+            <h2 class="slide-title">Спасибо, что установили "Калькулятор мигранта"!</h2>
+            <ion-button fill="clear" (click)="startApp()">
+                Начать использование
+                <ion-icon slot="end" name="arrow-forward"></ion-icon>
+            </ion-button>
+        </ion-slide>
+    </ion-slides>
+</ion-content>

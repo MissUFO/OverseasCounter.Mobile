@@ -1,9 +1,21 @@
-<ion-header>
+<ion-header no-border>
   <ion-toolbar>
-    <ion-title>profile</ion-title>
+    <ion-title>Настройки</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content padding>
-
+    <!--*ngIf="username"-->
+    <div padding-top text-center >
+        <img src="https://www.gravatar.com/avatar?d=mm&s=140" alt="avatar">
+        <h2>{{username}}</h2>
+        <ion-list inset>
+            <ion-item (click)="updatePicture()">Изменить аватар</ion-item>
+            <ion-item (click)="changeUsername()">Изменить имя пользователя</ion-item>
+            <ion-item (click)="changePassword()">Изменить пароль</ion-item>
+            <ion-item (click)="countries()">Мои страны</ion-item>
+            <ion-item (click)="countryvisas()">Мои визы</ion-item>
+            <ion-item (click)="support()">Поддержка</ion-item>
+            <ion-item (click)="logout()">Выход</ion-item>
+        </ion-list>
+    </div>
 </ion-content>

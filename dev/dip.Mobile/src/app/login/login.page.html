@@ -1,9 +1,74 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
-
+<!--<ion-header>
+    <ion-toolbar >
+        <ion-buttons >
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Login</ion-title>
+    </ion-toolbar>
+</ion-header>-->
 <ion-content padding>
-
+    <div class="login-logo">
+        
+       <!-- <img src="assets/img/logo.png" alt="Калькулятор мигранта">-->
+    </div>
+    <ion-row responsive-sm>
+        <ion-col text-center>
+            <h1>Калькулятор мигранта</h1>
+            Введите e-mail и пароль или войдите, используя социальные сети
+        </ion-col>
+    </ion-row>
+    <ion-row responsive-sm>
+        <ion-col text-center>
+           
+        </ion-col>
+    </ion-row>
+    <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)" novalidate>
+        <ion-list>
+            <ion-item>
+                <!--<ion-label position="floating" >Имя пользователя</ion-label>-->
+                <ion-input placeholder="E-mail" [(ngModel)]="login.username" name="username" type="text" #username="ngModel" spellcheck="false" autocapitalize="off"
+                           required >
+                </ion-input>
+            </ion-item>
+            <ion-text color="danger">
+                <p [hidden]="username.valid || submitted == false" padding-left>
+                    Введите имя пользователя
+                </p>
+            </ion-text>
+            <ion-item>
+                <!--<ion-label position="floating" >Пароль</ion-label>-->
+                <ion-input placeholder="Пароль" [(ngModel)]="login.password" name="password" type="password" #password="ngModel" required >
+                </ion-input>
+            </ion-item>
+            <ion-text color="danger">
+                <p [hidden]="password.valid || submitted == false" padding-left>
+                    Введите пароль
+                </p>
+            </ion-text>
+        </ion-list>
+        <ion-row responsive-sm >
+            <ion-col text-center>
+                <ion-button type="submit" color="danger" size="medium" text-capitalize >Войти</ion-button>
+            </ion-col>
+        </ion-row>
+        <ion-row responsive-sm>
+            <ion-col text-center>
+                <ion-button (click)="onFacebook()" color="light" align="center" ><ion-icon name="logo-facebook"></ion-icon></ion-button>
+            
+                <ion-button (click)="onGoogle()" color="light" ><ion-icon name="logo-google"></ion-icon></ion-button>
+           
+                <ion-button (click)="onTwitter()" color="light" ><ion-icon name="logo-twitter"></ion-icon></ion-button>
+            </ion-col>
+        </ion-row>
+        <ion-row responsive-sm>
+            <ion-col text-center>
+                <a href="/login-restore" >Восстановить пароль?</a>
+            </ion-col>
+        </ion-row>
+        <ion-row responsive-sm>
+            <ion-col text-center>
+                <ion-button (click)="onSignup()" color="dark" text-capitalize >Зарегистрироваться</ion-button>
+            </ion-col>
+        </ion-row>
+    </form>
 </ion-content>

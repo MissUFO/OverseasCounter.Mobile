@@ -1,9 +1,37 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>trip-add</ion-title>
+      <ion-buttons slot="start">
+          <ion-back-button icon="arrow-back"></ion-back-button>
+      </ion-buttons>
+    <ion-title>Поездка</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
+    <form #tripAddForm="ngForm" (ngSubmit)="onSave(tripAddForm)" novalidate>
+        <ion-list>
+            <ion-list-header>Добавить поездку</ion-list-header>
+            <ion-item>
+                <ion-label>Страна</ion-label>
+                <ion-select placeholder="Выберите страну" required>
+                    <ion-select-option value="ru">Россия</ion-select-option>
+                    <ion-select-option value="uk">Великобритания</ion-select-option>
+                    <ion-select-option value="us">США</ion-select-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label>Дата с</ion-label>
+                <ion-datetime displayFormat="DD MMM YYYY" required></ion-datetime>
+            </ion-item>
+            <ion-item>
+                <ion-label>Дата по</ion-label>
+                <ion-datetime displayFormat="DD MMM YYYY" required></ion-datetime>
+            </ion-item>
+            <ion-item>
+                <ion-button (click)="onCancel()" color="danger" size="medium" text-capitalize>Отменить</ion-button>
 
+                <ion-button typeof="submit" color="success" size="medium" text-capitalize>Сохранить</ion-button>
+            </ion-item>
+        </ion-list>
+    </form>
 </ion-content>

@@ -34959,8 +34959,37 @@
     <None Include="angular.json" />
     <None Include="tsconfig.json" />
     <None Include="tslint.json" />
+    <None Include="src\app\_services\country.service.ts" />
+    <None Include="src\app\_services\country.service.spec.ts" />
+    <None Include="src\app\_services\log.service.ts" />
+    <None Include="src\app\_services\log.service.spec.ts" />
+    <None Include="src\app\_services\settings.service.ts" />
+    <None Include="src\app\_services\settings.service.spec.ts" />
+    <None Include="src\app\_services\trip.service.ts" />
+    <None Include="src\app\_services\trip.service.spec.ts" />
+    <None Include="src\app\_services\user.service.ts" />
+    <None Include="src\app\_services\user.service.spec.ts" />
+    <None Include="src\app\_interfaces\useraccount.ts" />
+    <None Include="src\app\onboard\onboard.module.ts" />
+    <None Include="src\app\onboard\onboard.page.html" />
+    <None Include="src\app\onboard\onboard.page.scss" />
+    <None Include="src\app\onboard\onboard.page.spec.ts" />
+    <None Include="src\app\onboard\onboard.page.ts" />
+    <None Include="src\assets\manifest.json" />
+    <None Include="src\assets\icon\appicon.png" />
+    <None Include="src\assets\img\logo.png" />
+    <None Include="src\assets\img\onboard-slidebox-img-1.png" />
+    <None Include="src\assets\img\onboard-slidebox-img-2.png" />
+    <None Include="src\assets\img\onboard-slidebox-img-3.png" />
+    <None Include="src\assets\img\onboard-slidebox-img-4.png" />
+    <None Include="src\app\_interfaces\usergeolocation.ts" />
+    <None Include="src\app\_interfaces\user.ts" />
+    <None Include="src\app\_services\geo.service.ts" />
+    <None Include="src\app\_services\geo.service.spec.ts" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="cert\" />
+    <Folder Include="src\app\_services\" />
+    <Folder Include="src\app\_interfaces\" />
   </ItemGroup>
 </Project>

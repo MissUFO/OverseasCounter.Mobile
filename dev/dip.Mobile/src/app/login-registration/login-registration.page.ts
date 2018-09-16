@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { UserService } from '../_services/user.service';
+import { UserAccount } from '../_interfaces/useraccount';
+
 
 @Component({
   selector: 'app-login-registration',
@@ -7,7 +13,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginRegistrationPage implements OnInit {
 
-  constructor() { }
+  signup: UserAccount = { username: '', password: '' };
+  submitted = false;
+
+  constructor(
+    public router: Router,
+    public userService: UserService
+  ) {}
+
+  onSignup(form: NgForm) {
+    this.submitted = true;
+
+    if (form.valid) {
+      this.userService.signup(this.signup.username);
+      this.router.navigateByUrl('/app/tabs/(schedule:schedule)');
+    }
+  }
 
   ngOnInit() {
   }

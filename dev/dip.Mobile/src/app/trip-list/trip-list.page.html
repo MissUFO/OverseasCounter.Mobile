@@ -5,5 +5,12 @@
 </ion-header>
 
 <ion-content padding>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingIcon="arrow-dropdown"
+                               pullingText="Потяните для обновления"
+                               refreshingSpinner="circles"
+                               refreshingText="Загрузка...">
 
+        </ion-refresher-content>
+    </ion-refresher>
 </ion-content>

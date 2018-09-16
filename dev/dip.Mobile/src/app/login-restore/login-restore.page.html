@@ -1,9 +1,31 @@
-<ion-header>
+<ion-header no-border>
   <ion-toolbar>
-    <ion-title>login-restore</ion-title>
+    <ion-title text-center>Восстановление пароля</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-
+    <div class="login-logo">
+        <img src="assets/img/logo.png" alt="Калькулятор мигранта">
+    </div>
+    <ion-row responsive-sm>
+        <ion-col text-center>
+            Введите ваше имя пользователя (email) и мы отправим вам инструкцию по восстановлению доступа
+        </ion-col>
+    </ion-row>
+    <form #loginRestoreForm="ngForm" novalidate>
+        <ion-list>
+            <ion-item>
+                <ion-label position="stacked">Имя пользователя</ion-label>
+                <ion-input [(ngModel)]="login.username" name="username" type="text" #username="ngModel" spellcheck="false" autocapitalize="off"
+                           required>
+                </ion-input>
+            </ion-item>
+            </ion-list>
+        <ion-row responsive-sm>
+            <ion-col text-center>
+                <ion-button (click)="onRestore(loginRestoreForm)" type="submit" color="success" size="medium" text-capitalize>Восстановить пароль</ion-button>
+            </ion-col>
+        </ion-row>
+        </form>
 </ion-content>

@@ -1,10 +1,38 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Home</ion-title>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title text-center>
+          <ion-chip (click)="goProfile()">
+              <ion-avatar>
+                  <img [src]="user.picture">
+              </ion-avatar>
+              <ion-label>{{user.name}}</ion-label>
+          </ion-chip>
+      </ion-title>
+      <!--<ion-buttons slot="end">
+          <ion-button (click)="presentPopover($event)">
+              <ion-icon slot="icon-only" name="more"></ion-icon>
+          </ion-button>
+      </ion-buttons>-->
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs">docs</a> will be your guide.</p>
+    <ion-infinite-scroll>
+        <ion-infinite-scroll-content loadingSpinner="bubbles"
+                                     loadingText="Loading more data…">
+            <ion-card>
+                <ion-item>
+                    <ion-icon name="pin" slot="start"></ion-icon>
+                    <ion-label>{{ user.currentCountryName }}</ion-label>
+                    <ion-button fill="outline" slot="end" (click)="refreshGeoLocation()"><ion-icon name="refresh"></ion-icon></ion-button>
+                </ion-item>
+                <ion-card-content>
+                    {{location}}
+                </ion-card-content>
+            </ion-card>
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
 </ion-content>

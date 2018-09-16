@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },
+  { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'login-registration', loadChildren: './login-registration/login-registration.module#LoginRegistrationPageModule' },
   { path: 'login-restore', loadChildren: './login-restore/login-restore.module#LoginRestorePageModule' },
@@ -13,7 +14,11 @@ const routes: Routes = [
   { path: 'country-add', loadChildren: './country-add/country-add.module#CountryAddPageModule' },
   { path: 'country-visa-list', loadChildren: './country-visa-list/country-visa-list.module#CountryVisaListPageModule' },
   { path: 'country-visa-add', loadChildren: './country-visa-add/country-visa-add.module#CountryVisaAddPageModule' },
-  { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' }
+  { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },
+
+  { path: 'about', loadChildren: './about/about.module#AboutPageModule' },
+  { path: 'contact', loadChildren: './contact/contact.module#ContactPageModule' },
+  { path: 'onboard', loadChildren: './onboard/onboard.module#OnboardPageModule' }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

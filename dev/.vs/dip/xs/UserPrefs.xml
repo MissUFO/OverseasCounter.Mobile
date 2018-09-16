@@ -1,0 +1,24 @@
+﻿<Properties StartupConfiguration="{1EB9C951-AC0F-4CA3-842F-4B140CB269CB}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="dip.Mobile/src/app/_services/geo.service.ts">
+    <Files>
+      <File FileName="dip.Mobile/src/app/home/home.page.ts" Line="70" Column="65" />
+      <File FileName="dip.Mobile/src/app/_services/geo.service.ts" Line="30" Column="36" />
+      <File FileName="dip.Mobile/src/app/home/home.page.html" Line="29" Column="58" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Services.dip.WebAPI PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|Android" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/smetaninatv/Work/overseascounter/dev/dip.WebAPI/Controllers/SettingsController.cs" relfile="dip.WebAPI/Controllers/SettingsController.cs" line="15" column="1" />
+      <Breakpoint file="/Users/smetaninatv/Work/overseascounter/dev/dip.Mobile/src/app/home/home.page.ts" relfile="dip.Mobile/src/app/home/home.page.ts" line="70" column="1" />
+      <Breakpoint file="/Users/smetaninatv/Work/overseascounter/dev/dip.Mobile/src/app/_services/geo.service.ts" relfile="dip.Mobile/src/app/_services/geo.service.ts" line="27" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <DisabledProjects>
+    <String>dip.Db/dip.Db.sqlproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.ItemProperties.Mobile.dip.Mobile PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

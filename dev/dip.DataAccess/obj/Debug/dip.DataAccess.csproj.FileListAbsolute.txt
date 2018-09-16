@@ -9,3 +9,4 @@ C:/Work/dip-mobile/dev/dip/dip.DataAccess/obj/Debug/dip.DataAccess.pdb
 /Users/smetaninatv/Work/overseascounter/dev/dip.DataAccess/obj/Debug/dip.DataAccess.csproj.CoreCompileInputs.cache
 /Users/smetaninatv/Work/overseascounter/dev/dip.DataAccess/obj/Debug/dip.DataAccess.dll
 /Users/smetaninatv/Work/overseascounter/dev/dip.DataAccess/obj/Debug/dip.DataAccess.pdb
+/Users/smetaninatv/Work/overseascounter/dev/dip.DataAccess/obj/Debug/dip.DataAccess.csprojAssemblyReference.cache

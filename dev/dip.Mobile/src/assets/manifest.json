@@ -1,0 +1,13 @@
+{
+  "name": "Калькулятор мигранта",
+  "short_name": "Калькулятор мигранта",
+  "start_url": "index.html",
+  "display": "standalone",
+  "icons": [{
+    "src": "img/logo.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }],
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff"
+}

@@ -1,9 +1,29 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>country-visa-list</ion-title>
+    <ion-title>Визы</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingIcon="arrow-dropdown"
+                               pullingText="Потяните для обновления"
+                               refreshingSpinner="circles"
+                               refreshingText="Загрузка...">
+        </ion-refresher-content>
+    </ion-refresher>
 
+            <ion-card>
+                <ion-item>
+                    <ion-icon name="pin" slot="start"></ion-icon>
+                    <ion-label>Россия</ion-label>
+                    <ion-button fill="outline" slot="end" (click)="more()">...</ion-button>
+                </ion-item>
+                <ion-card-content>
+
+                </ion-card-content>
+            </ion-card>
+    
+    </ion-refresher-content>
+    </ion-refresher>
 </ion-content>

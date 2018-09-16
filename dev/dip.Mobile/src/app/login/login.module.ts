@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
-import { Facebook } from '@ionic-native/facebook';
-import { NativeStorage } from '@ionic-native/native-storage';
+//import { Facebook } from '@ionic-native/facebook';
+//import { NativeStorage } from '@ionic-native/native-storage';
 
 import { LoginPage } from './login.page';
 
@@ -20,8 +20,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule, 
-    Facebook,
-    NativeStorage,
+    //Facebook,
+    //NativeStorage,
     RouterModule.forChild(routes)
   ],
   declarations: [LoginPage]

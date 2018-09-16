@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
-import { Facebook } from '@ionic-native/facebook';
-import { NativeStorage } from '@ionic-native/native-storage';
+//import { Facebook } from '@ionic-native/facebook';
+//import { NativeStorage } from '@ionic-native/native-storage';
 
 import { ProfilePage } from './profile.page';
 
@@ -13,8 +13,8 @@ import { ProfilePage } from './profile.page';
     IonicModule,
     CommonModule,
     FormsModule,
-    Facebook,
-    NativeStorage,
+//    Facebook,
+//    NativeStorage,
     RouterModule.forChild([{ path: '', component: ProfilePage }])
   ],
   declarations: [ProfilePage]

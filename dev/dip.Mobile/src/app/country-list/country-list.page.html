@@ -1,9 +1,38 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>country-list</ion-title>
+      <ion-segment (ionChange)="segmentChanged($event)" color="primary">
+          <ion-segment-button value="country" checked>
+              Страны
+          </ion-segment-button>
+          <ion-segment-button value="visa">
+              Визы
+          </ion-segment-button>
+      </ion-segment>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
+   
 
+    <ion-searchbar animated></ion-searchbar>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingIcon="arrow-dropdown"
+                               pullingText=""
+                               refreshingSpinner="circles"
+                               refreshingText="Загрузка...">
+
+            <ion-card>
+                <ion-item>
+                    <ion-icon name="pin" slot="start"></ion-icon>
+                    <ion-label>Россия</ion-label>
+                    <ion-button fill="outline" slot="end" (click)="more()">...</ion-button>
+                </ion-item>
+                <ion-card-content>
+
+
+                </ion-card-content>
+            </ion-card>
+
+        </ion-refresher-content>
+    </ion-refresher>
 </ion-content>
