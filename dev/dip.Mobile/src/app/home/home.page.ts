@@ -7,10 +7,11 @@ import { UserService } from '../_services/user.service';
 import { User } from '../_interfaces/user';
 
 import { GeoService } from '../_services/geo.service';
-import { UserGeoLocation } from '../_interfaces/usergeolocation';
 
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { Storage } from '@ionic/storage';
+import { UserGeoLocation } from '../_interfaces/usergeolocation';
+import { UserAccount } from '../_interfaces/useraccount';
 
 @Component({
   selector: 'app-home',
@@ -18,6 +19,8 @@ import { Storage } from '@ionic/storage';
   styleUrls: ['home.page.scss']
 })
 export class HomePage implements OnInit {
+
+    user: User;
 
     constructor(
     private geolocation: Geolocation, 
@@ -28,53 +31,48 @@ export class HomePage implements OnInit {
     public route: ActivatedRoute,
     public router: Router) 
     {
-       
-    }
+        this.user = new User();
+        this.user.location = new UserGeoLocation();
+        this.user.account = new UserAccount();
 
-    user: any;
-    location: any;
+        this.subscribeGeoEvents();
+    }
 
     ngOnInit() {
 
-     this.subscribeGeoEvents();
-
     }
 
-    subscribeGeoEvents() {
-
-    this.user = {
-            name: "Татьяна Сметанина",
-            currentCountryName: "Россия",
-            picture: "https://www.gravatar.com/avatar?d=mm&s=140"
-    };
-
-    this.refreshGeoLocation();
-      
+    async subscribeGeoEvents() {
+        await this.refreshGeoLocation();
     }
 
-    refreshGeoLocation()
+    async refreshGeoLocation()
     {
         console.log('Getting current location...');
 
+        this.user.name = 'Татьяна Сметанина';
+        this.user.picture = 'https://www.gravatar.com/avatar?d=mm&s=140';
+
         this.geolocation.getCurrentPosition().then((resp) => {
 
-            this.location = ('Latitude: '          + resp.coords.latitude          + '\n' +
-              'Longitude: '         + resp.coords.longitude         + '\n' +
-              'Altitude: '          + resp.coords.altitude          + '\n' +
-              'Accuracy: '          + resp.coords.accuracy          + '\n' +
-              'Altitude Accuracy: ' + resp.coords.altitudeAccuracy  + '\n' +
-              'Heading: '           + resp.coords.heading           + '\n' +
-              'Speed: '             + resp.coords.speed             + '\n' +
-              'Timestamp: '         + resp.timestamp                + '\n');
-
-            this.user.currentCountryName = this.geoService.getLocation(resp.coords.latitude, resp.coords.longitude);
-            console.log(this.user.currentCountryName);
+            this.user.location.latitude = resp.coords.latitude;
+            this.user.location.longitude = resp.coords.longitude;
+            this.user.location.timestamp = resp.timestamp;
 
         }).catch((error) => {
             console.log('Error getting location', error);
-        });
+        }).then( resp => this.setCurrentCountry(this.user.location) );
 
-       
+    }
+
+    async setCurrentCountry(location: any)
+    {
+        let result = await this.geoService.getLocationAsync(location.latitude, location.longitude);
+
+        this.user.location.countryname = result.countryname;
+        this.user.location.address = result.address;
+
+        return this.user.location;
     }
 
     watchGeoLocation()

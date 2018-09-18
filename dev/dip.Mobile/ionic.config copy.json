@@ -1,8 +1,6 @@
 {
   "name": "com.overseas.counter.mobile",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "angular",
+  "integrations": {},
+  "type": "ionic-angular",
   "pro_id": "com.overseas.counter.mobile"
 }

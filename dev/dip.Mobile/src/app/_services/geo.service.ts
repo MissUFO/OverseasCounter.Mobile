@@ -23,17 +23,31 @@ export class GeoService {
     private http: HttpClient
   ) { }
 
-    getLocation(lat: number, lng: number): Observable<any> {
-      debugger;
 
-      let url = apiUrl+'?latlng='+lat+','+lng+'&key='+apiKey;
+    async getLocationAsync(lat: number, lng: number): Promise<any> {
+         let url = apiUrl+'?latlng='+lat+','+lng+'&key='+apiKey;
+
+         try {
+            let response = await this.http.get(url).toPromise();
+            return this.processData(response);
+         } catch (error) {
+             //await this.handleError(error);
+             //return '';
+         }
+    }
+
+    getLocation(lat: number, lng: number) {
      
+        let url = apiUrl+'?latlng='+lat+','+lng+'&key='+apiKey;
+        return new Promise(resolve => { this.http.get(url).toPromise()
+            .then(
+                res => {
+                    console.log(res);
+                    resolve(res);
+                });
+        });
 
-      return this.http.get(url, httpOptions);//.pipe(
-          //map(this.processData, this)
-          //,
-          //catchError(this.handleError)
-          //);
+      //return new Promise(resolve => { this.http.get(url).subscribe(data => { resolve(data); }, err => { console.log(err); }); });
     }
 
     //updateLocation(id: string, data): Observable<any> {
@@ -44,7 +58,7 @@ export class GeoService {
     //    );
     //}
 
-    private handleError(error: HttpErrorResponse) {
+    handleError(error: HttpErrorResponse) {
         if (error.error instanceof ErrorEvent) {
         console.error('An error occurred:', error.error.message);
         } else {
@@ -54,18 +68,28 @@ export class GeoService {
         return throwError('Something bad happened; please try again later.');
     }
 
-    private processData(data: any) {
-        debugger;
+    processData(data: any) {
 
-        data.results.forEach((res: any) => {
+        if(data == undefined || data == null || data.results == undefined || data.results.length == 0)
+            return { address:'', countryname:''};
 
-            res.address_components.forEach((address: any) => {
-              console.log(address.formatted_address);
-            });
+        return {
 
-        });
+            address : data.results[0].formatted_address,
+            countryname : data.results[data.results.length-1].formatted_address
+        };
 
-        return data;
+        //data.results.forEach((res: any) => {
+
+        //    result.address = res.formatted_address;
+        //    result.countryname = res.formatted_address;
+            //res.address_components.forEach((address: any) => {
+       //       console.log(result);
+            //});
+
+       // });
+
+      //  return result;
     }
   
 }

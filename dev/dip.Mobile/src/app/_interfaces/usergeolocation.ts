@@ -5,8 +5,9 @@
 })
 
 export class UserGeoLocation {
-  latitude: number;
-  longitude: number;
-  countryname: string;
-  timestamp: any;
+    latitude: number;
+    longitude: number;
+    countryname: string;
+    address: string;
+    timestamp: any;
 }

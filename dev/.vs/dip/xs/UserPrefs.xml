@@ -1,9 +1,15 @@
 ﻿<Properties StartupConfiguration="{1EB9C951-AC0F-4CA3-842F-4B140CB269CB}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="dip.Mobile/src/app/_services/geo.service.ts">
+  <MonoDevelop.Ide.Workbench ActiveDocument="dip.Mobile/config.xml">
     <Files>
-      <File FileName="dip.Mobile/src/app/home/home.page.ts" Line="70" Column="65" />
-      <File FileName="dip.Mobile/src/app/_services/geo.service.ts" Line="30" Column="36" />
-      <File FileName="dip.Mobile/src/app/home/home.page.html" Line="29" Column="58" />
+      <File FileName="dip.Mobile/src/app/home/home.page.ts" Line="47" Column="9" />
+      <File FileName="dip.Mobile/src/app/_services/geo.service.ts" Line="78" Column="20" />
+      <File FileName="dip.Mobile/src/app/_interfaces/user.ts" Line="13" Column="12" />
+      <File FileName="dip.Mobile/src/app/_interfaces/usergeolocation.ts" Line="9" Column="14" />
+      <File FileName="dip.Mobile/src/app/_interfaces/useraccount.ts" Line="7" Column="25" />
+      <File FileName="dip.Mobile/src/app/home/home.page.html" Line="32" Column="35" />
+      <File FileName="dip.Mobile/package.json" Line="1" Column="1" />
+      <File FileName="dip.Mobile/ionic.config.json" Line="7" Column="42" />
+      <File FileName="dip.Mobile/config.xml" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Services.dip.WebAPI PreferredExecutionTarget="MonoDevelop.Default" />
@@ -11,8 +17,6 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/smetaninatv/Work/overseascounter/dev/dip.WebAPI/Controllers/SettingsController.cs" relfile="dip.WebAPI/Controllers/SettingsController.cs" line="15" column="1" />
-      <Breakpoint file="/Users/smetaninatv/Work/overseascounter/dev/dip.Mobile/src/app/home/home.page.ts" relfile="dip.Mobile/src/app/home/home.page.ts" line="70" column="1" />
-      <Breakpoint file="/Users/smetaninatv/Work/overseascounter/dev/dip.Mobile/src/app/_services/geo.service.ts" relfile="dip.Mobile/src/app/_services/geo.service.ts" line="27" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
