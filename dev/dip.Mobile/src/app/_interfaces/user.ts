@@ -9,7 +9,7 @@ import { UserGeoLocation } from './usergeolocation';
 export class User {
     id: number;
     name: string;
-    account: UserAccount;
-    picture: string;
-    location: UserGeoLocation;
+    account: UserAccount = new UserAccount();
+    picture: string = '../assets/img/user_picture.png';
+    location: UserGeoLocation = new UserGeoLocation();
 }

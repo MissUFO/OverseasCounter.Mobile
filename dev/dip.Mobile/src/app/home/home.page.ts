@@ -32,8 +32,8 @@ export class HomePage implements OnInit {
     public router: Router) 
     {
         this.user = new User();
-        this.user.location = new UserGeoLocation();
-        this.user.account = new UserAccount();
+        //this.user.location = new UserGeoLocation();
+        //this.user.account = new UserAccount();
 
         this.subscribeGeoEvents();
     }
@@ -51,7 +51,7 @@ export class HomePage implements OnInit {
         console.log('Getting current location...');
 
         this.user.name = 'Татьяна Сметанина';
-        this.user.picture = 'https://www.gravatar.com/avatar?d=mm&s=140';
+        //this.user.picture = '../assets/img/user_picture.png';
 
         this.geolocation.getCurrentPosition().then((resp) => {
 
@@ -90,19 +90,4 @@ export class HomePage implements OnInit {
         this.router.navigateByUrl('/tabs/(profile:profile)');
     }
 
-//    async getClassrooms() {
-//          const loading = await this.loadingController.create({
-//            content: 'Loading'
-//          });
-//          await loading.present();
-//          await this.api.getClassroom()
-//            .subscribe(res => {
-//              console.log(res);
-//              this.classrooms = res;
-//              loading.dismiss();
-//            }, err => {
-//              console.log(err);
-//              loading.dismiss();
-//            });
-//    }
 }

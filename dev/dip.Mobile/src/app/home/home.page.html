@@ -20,23 +20,24 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-infinite-scroll>
-        <ion-infinite-scroll-content loadingSpinner="bubbles"
-                                     loadingText="Loading more data…">
-            <ion-card>
-                <ion-item>
-                    <ion-icon name="pin" slot="start"></ion-icon>
-                    <ion-label>{{ user.location.countryname }}</ion-label>
-                    <ion-button fill="outline" slot="end" (click)="refreshGeoLocation()"><ion-icon name="refresh"></ion-icon></ion-button>
-                </ion-item>
-                <ion-card-content>
-                  {{user.location.address}}
-                  <br /><br />
-                  {{user.location.latitude}}, {{user.location.longitude}}
-                  <br />
-                  {{user.location.timestamp}}
-                </ion-card-content>
-            </ion-card>
-        </ion-infinite-scroll-content>
-    </ion-infinite-scroll>
+  <!--<ion-infinite-scroll>
+          <ion-infinite-scroll-content loadingSpinner="bubbles"
+                                       loadingText="Loading more data…">-->
+  <ion-card>
+    <ion-item>
+      <ion-icon name="pin" slot="start"></ion-icon>
+      <ion-label>{{ user.location.countryname }}</ion-label>
+      <ion-button fill="outline" slot="end" (click)="refreshGeoLocation()"><ion-icon name="refresh"></ion-icon></ion-button>
+    </ion-item>
+    <ion-card-content>
+      {{user.location.address}}
+      <!-- <br /><br />
+      {{user.location.latitude}}, {{user.location.longitude}}
+      <br />
+      {{user.location.timestamp}}-->
+    </ion-card-content>
+  </ion-card>
+
+  <!-- </ion-infinite-scroll-content>
+      </ion-infinite-scroll>-->
 </ion-content>
