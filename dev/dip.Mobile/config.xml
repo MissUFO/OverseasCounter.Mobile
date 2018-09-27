@@ -2,7 +2,7 @@
 <widget id="com.overseas.counter.mobile" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>OverseasCounter</name>
     <description>Приложение для автоматического подсчета дней, проведенных в стране или за её пределами.</description>
-    <author email="smetaninatv@yandex.ru" href="http://smetainatv.com/">Tatiana Smetanina</author>
+    <author email="smetaninatv@yandex.ru" href="http://smetaninatv.com/">Tatiana Smetanina</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
@@ -20,6 +20,8 @@
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="10000" />
     <platform name="android">
+        <resource-file src="src/android/build-extras.gradle" target="app/build-extras.gradle" />
+        <resource-file src="src/android/BackgroundGeolocationHeadlessTask.java" target="app/src/main/java/com/transistorsoft/cordova/bggeo/BackgroundGeolocationHeadlessTask.java" />
         <allow-intent href="market:*" />
         <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
         <icon density="mdpi" src="resources/android/icon/drawable-mdpi-icon.png" />
@@ -79,13 +81,12 @@
             <param name="ios-package" value="CDVLocation" />
         </feature>
         <edit-config file="*-Info.plist" mode="merge" target="NSLocationWhenInUseUsageDescription">
-            <string>Пожалуйста, разрешита использование данных о местоположении устройства.</string>
+            <string>Пожалуйста, разрешита использование данных о местоположении устройства. Это необходимо для автоматического подсчета дней в стране.</string>
         </edit-config>
         <edit-config file="*-Info.plist" mode="merge" target="NSLocationAlwaysUsageDescription">
-            <string>Пожалуйста, разрешита использование данных о местоположении устройства.</string>
+            <string>Пожалуйста, разрешита использование данных о местоположении устройства. Это необходимо для автоматического подсчета дней в стране.</string>
         </edit-config>
     </platform>
-    <engine name="android" spec="^7.1.1" />
     <plugin name="cordova-plugin-facebook4" spec="~2.3.0">
         <variable name="APP_ID" value="1137665606387537" />
         <variable name="APP_NAME" value="com.overseas.counter.mobile" />
@@ -101,6 +102,7 @@
         <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="To locate you" />
     </plugin>
     <plugin name="cordova-sqlite-storage" spec="~2.4.0" />
-    <plugin name="cordova-plugin-background-fetch" spec="~5.4.1" />
-    <engine name="ios" spec="~4.5.5" />
+    <engine name="android" spec="^7.1.1" />
+    <engine name="ios" spec="^4.5.5" />
+    <plugin name="cordova-plugin-background-fetch" spec="^5.4.1" />
 </widget>

@@ -6,8 +6,7 @@ import { ToastController } from '@ionic/angular';
 import { UserService } from '../_services/user.service';
 import { UserAccount } from '../_interfaces/useraccount';
 
-
-//import { Facebook } from '@ionic-native/facebook';
+import { Facebook } from '@ionic-native/facebook/ngx';
 import { Storage } from '@ionic/storage';
 
 
@@ -25,7 +24,8 @@ export class LoginPage {
     public userService: UserService,
     public router: Router,
     private storage: Storage,
-    public toastController: ToastController
+    public toastController: ToastController,
+    private facebook: Facebook
   ) { 
 
         this.storage.set('name', 'Max');

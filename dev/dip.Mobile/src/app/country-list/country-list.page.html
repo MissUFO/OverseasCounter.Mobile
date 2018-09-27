@@ -1,13 +1,16 @@
 <ion-header>
   <ion-toolbar>
-      <ion-segment (ionChange)="segmentChanged($event)" color="primary">
-          <ion-segment-button value="country" checked>
-              Страны
-          </ion-segment-button>
-          <ion-segment-button value="visa">
-              Визы
-          </ion-segment-button>
-      </ion-segment>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-segment (ionChange)="segmentChanged($event)" color="primary">
+      <ion-segment-button value="country" checked>
+        Страны
+      </ion-segment-button>
+      <ion-segment-button value="visa">
+        Визы
+      </ion-segment-button>
+    </ion-segment>
   </ion-toolbar>
 </ion-header>
 

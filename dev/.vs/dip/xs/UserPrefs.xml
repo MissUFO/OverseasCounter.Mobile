@@ -1,11 +1,10 @@
 ﻿<Properties StartupConfiguration="{1EB9C951-AC0F-4CA3-842F-4B140CB269CB}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="dip.Mobile/src/app/home/home.page.html">
+  <MonoDevelop.Ide.Workbench ActiveDocument="dip.Mobile/src/app/login/login.page.ts">
     <Files>
-      <File FileName="dip.Mobile/src/app/home/home.page.ts" Line="92" Column="1" />
-      <File FileName="dip.Mobile/src/app/_services/geo.service.ts" Line="78" Column="20" />
-      <File FileName="dip.Mobile/src/app/_interfaces/user.ts" Line="14" Column="55" />
-      <File FileName="dip.Mobile/src/app/_interfaces/usergeolocation.ts" Line="15" Column="10" />
-      <File FileName="dip.Mobile/src/app/home/home.page.html" Line="37" Column="7" />
+      <File FileName="dip.Mobile/src/app/home/home.page.ts" Line="28" Column="1" />
+      <File FileName="dip.Mobile/src/app/app.component.ts" Line="13" Column="55" />
+      <File FileName="dip.Mobile/src/app/app.module.ts" Line="17" Column="55" />
+      <File FileName="dip.Mobile/src/app/login/login.page.ts" Line="28" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Services.dip.WebAPI PreferredExecutionTarget="MonoDevelop.Default" />
