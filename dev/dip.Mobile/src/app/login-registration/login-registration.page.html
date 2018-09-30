@@ -4,40 +4,59 @@
         <ion-back-button></ion-back-button>
       </ion-buttons>
         <ion-title text-center>Регистрация</ion-title>
+        <ion-buttons slot="end">
+
+        </ion-buttons>
     </ion-toolbar>
 </ion-header>
-<ion-content>
-    <div class="login-logo">
+<ion-content padding>
+    <div class="login-logo" text-center>
         <img src="assets/img/logo.png" alt="Калькулятор мигранта">
     </div>
-    <ion-row responsive-sm>
-        <ion-col text-center>
-            Для регистрации, укажите email и пароль
-        </ion-col>
-    </ion-row>
     <form #signupForm="ngForm" novalidate>
-        <ion-list lines="none">
-            <ion-item>
-                <ion-label position="stacked" color="primary">Имя пользователя (email)</ion-label>
-                <ion-input [(ngModel)]="signup.username" name="username" type="text" #username="ngModel" required>
-                </ion-input>
-            </ion-item>
-            <ion-text color="danger">
-                <p [hidden]="username.valid || submitted == false" padding-left>
-                    Введите имя пользователя
-                </p>
-            </ion-text>
-            <ion-item>
-                <ion-label position="stacked" color="primary">Пароль</ion-label>
-                <ion-input [(ngModel)]="signup.password" name="password" type="password" #password="ngModel" required>
-                </ion-input>
-            </ion-item>
-            <ion-text color="danger">
-                <p [hidden]="password.valid || submitted == false" padding-left>
-                    Укажите пароль
-                </p>
-            </ion-text>
-        </ion-list>
+      <ion-list lines="none">
+        <ion-item>
+          <ion-label position="stacked" >Имя пользователя (email)</ion-label>
+          <ion-input [(ngModel)]="signup.username" name="username" type="text" #username="ngModel" required >
+          </ion-input>
+        </ion-item>
+        <ion-text color="danger">
+          <p [hidden]="username.valid || submitted == false" padding-left>
+            Введите имя пользователя
+          </p>
+        </ion-text>
+        <ion-item>
+          <ion-label position="stacked" >Пароль</ion-label>
+          <ion-input [(ngModel)]="signup.password" name="password" type="password" #password="ngModel" required>
+          </ion-input>
+        </ion-item>
+        <ion-text color="danger">
+          <p [hidden]="password.valid || submitted == false" padding-left>
+            Укажите пароль
+          </p>
+        </ion-text>
+
+        <ion-item>
+          <ion-label position="stacked" >Имя</ion-label>
+          <ion-input [(ngModel)]="signup.firstname" name="firstname" type="text" #firstname="ngModel">
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked" >Фамилия</ion-label>
+          <ion-input [(ngModel)]="signup.lastname" name="lastname" type="text" #lastname="ngModel">
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked" >Номер телефона</ion-label>
+          <ion-input [(ngModel)]="signup.phone" name="phone" type="text" #phone="ngModel">
+          </ion-input>
+        </ion-item>
+        <ion-text color="danger">
+          <p [hidden]="phone.valid || submitted == false" padding-left>
+            Укажите номер в формате +X(XXX)XXXXXXX
+          </p>
+        </ion-text>
+      </ion-list>
         <div padding>
             <ion-button (click)="onSignup(signupForm)" type="submit" expand="block">Зарегистрироваться</ion-button>
         </div>

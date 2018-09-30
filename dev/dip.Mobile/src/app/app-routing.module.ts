@@ -18,7 +18,10 @@ const routes: Routes = [
 
   { path: 'about', loadChildren: './about/about.module#AboutPageModule' },
   { path: 'contact', loadChildren: './contact/contact.module#ContactPageModule' },
-  { path: 'onboard', loadChildren: './onboard/onboard.module#OnboardPageModule' }
+  { path: 'onboard', loadChildren: './onboard/onboard.module#OnboardPageModule' },
+  { path: 'profile-change-password', loadChildren: './profile-change-password/profile-change-password.module#ProfileChangePasswordPageModule' },
+  { path: 'profile-change-username', loadChildren: './profile-change-username/profile-change-username.module#ProfileChangeUsernamePageModule' },
+  { path: 'profile-change-picture', loadChildren: './profile-change-picture/profile-change-picture.module#ProfileChangePicturePageModule' }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

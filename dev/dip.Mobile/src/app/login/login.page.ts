@@ -6,7 +6,7 @@ import { ToastController } from '@ionic/angular';
 import { UserService } from '../_services/user.service';
 import { UserAccount } from '../_interfaces/useraccount';
 
-import { Facebook } from '@ionic-native/facebook/ngx';
+import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
 import { Storage } from '@ionic/storage';
 
 
@@ -17,6 +17,7 @@ import { Storage } from '@ionic/storage';
 })
 
 export class LoginPage {
+
   login: UserAccount = { username: '', password: '' };
   submitted = false;
 
@@ -25,25 +26,35 @@ export class LoginPage {
     public router: Router,
     private storage: Storage,
     public toastController: ToastController,
-    private facebook: Facebook
-  ) { 
+    private fb: Facebook
+    ) 
+  { 
 
-        this.storage.set('name', 'Max');
+     let authorized = false;
 
-        this.storage.get('name').then((val) => {
-            console.log('Your age is', val);
-        });
+     this.storage.get('userInfo').then((val) => {
+         if(val != null && val.username!=''){
+             authorized = true;
+         }
+     });  
 
+     if(authorized)
+     {
+         this.router.navigateByUrl('/tabs/(home:home)');
+     }
   }
 
-  onLogin(form: NgForm) {
+    onLogin(form: NgForm) {
+
     this.submitted = true;
 
     if (form.valid) {
 
-        console.log('User name:', this.login.username);
-        console.log('Password:', this.login.username);
+      console.log('User name:', this.login.username);
+      console.log('Password:', this.login.password);
 
+      this.storage.set('userInfo', this.login);
+  
       //this.userService.login(this.login.username);
 
       this.router.navigateByUrl('/tabs/(home:home)');
@@ -55,7 +66,23 @@ export class LoginPage {
   }
 
   onFacebook() {
-   this.router.navigateByUrl('/tabs/(home:home)');
+
+        let result : FacebookLoginResponse = null;
+
+        this.fb.login(['public_profile', 'user_friends', 'email'])
+          .then((res: FacebookLoginResponse) => {result = res; console.log('Logged into Facebook!', res);})
+            .catch(e => console.log('Error logging into Facebook', e));
+
+        if(result != null)
+        {
+            console.log(result.status)
+            console.log(result.authResponse.userID);
+
+            this.router.navigateByUrl('/tabs/(home:home)');
+        }else
+        {
+            this.showErrorToast();
+        }
   }
 
   onGoogle() {
@@ -66,11 +93,11 @@ export class LoginPage {
     this.router.navigateByUrl('/tabs/(home:home)');
   }
 
-   onSignup() {
+  onSignup() {
     this.router.navigateByUrl('/login-registration');
   }
-
-   async showErrorToast() {
+ 
+  async showErrorToast() {
     const toast = await this.toastController.create({
       message: "Не удалось авторизоваться. Пользователь не найден.",
       duration: 2000
@@ -79,59 +106,3 @@ export class LoginPage {
   }
 
 }
-
-//export class LoginPage implements OnInit {
-
-//  FB_APP_ID: number = 1137665606387537;
-
-//  constructor(
-    //public fb: Facebook,
-    //public nativeStorage: NativeStorage
-//    ) 
-//  {
-    //this.fb.browserInit(this.FB_APP_ID, "v2.8");
-//  }
-
-//  ngOnInit() {
-//  }
-
-//  doFbLogin(){
-    //let permissions = new Array<string>();
-    //let nav = this.navCtrl;
-    //let env = this;
-    //the permissions your facebook app needs from the user
-    //permissions = ["public_profile"];
-
-
-    //this.fb.login(permissions)
-    //.then(function(response){
-    //  let userId = response.authResponse.userID;
-    //  let params = new Array<string>();
-
-      //Getting name and gender properties
-    //  env.fb.api("/me?fields=name,gender", params).then(function(user) { console.log(user.name); });
-    //  });
-//  }
-//}
-        //user.picture = "https://graph.facebook.com/" + userId + "/picture?type=large";
-        //now we have the users info, let's save it in the NativeStorage
-        //env.nativeStorage.setItem('user',
-        //{
-        //  name: user.name,
-        //  gender: user.gender,
-        //  picture: user.picture
-        //}
-        //}).then(
-        //        function(){
-        //            console.log('success');
-        //            nav.push(HomePage);
-        //        },
-        //        function (error) {
-        //          console.log(error);
-        //        }
-        //)
-        //  })
-    // }, function(error){
-    //   console.log(error);
-    //  });
- 
