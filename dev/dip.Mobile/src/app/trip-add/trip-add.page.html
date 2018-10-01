@@ -4,34 +4,39 @@
       <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title>Поездка</ion-title>
+    <ion-buttons slot="end">
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-    <form #tripAddForm="ngForm" (ngSubmit)="onSave(tripAddForm)" novalidate>
-        <ion-list>
-            <ion-list-header>Добавить поездку</ion-list-header>
-            <ion-item>
-                <ion-label>Страна</ion-label>
-                <ion-select placeholder="Выберите страну" required>
-                    <ion-select-option value="ru">Россия</ion-select-option>
-                    <ion-select-option value="uk">Великобритания</ion-select-option>
-                    <ion-select-option value="us">США</ion-select-option>
-                </ion-select>
-            </ion-item>
-            <ion-item>
-                <ion-label>Дата с</ion-label>
-                <ion-datetime displayFormat="DD MMM YYYY" required></ion-datetime>
-            </ion-item>
-            <ion-item>
-                <ion-label>Дата по</ion-label>
-                <ion-datetime displayFormat="DD MMM YYYY" required></ion-datetime>
-            </ion-item>
-            <ion-item>
-                <ion-button (click)="onCancel()" color="danger" size="medium" text-capitalize>Отменить</ion-button>
-
-                <ion-button typeof="submit" color="success" size="medium" text-capitalize>Сохранить</ion-button>
-            </ion-item>
-        </ion-list>
-    </form>
+  <form #tripAddForm="ngForm" (ngSubmit)="onSave(tripAddForm)" novalidate>
+     <ion-row responsive-sm>
+      <ion-col>
+        <ion-select placeholder="Выберите страну" required>
+          <ion-select-option value="ru">Россия</ion-select-option>
+          <ion-select-option value="uk">Великобритания</ion-select-option>
+          <ion-select-option value="us">США</ion-select-option>
+        </ion-select>
+      </ion-col>
+    </ion-row>
+    <ion-row responsive-sm>
+      <ion-col>
+        <ion-datetime displayFormat="DD MMM YYYY" placeholder="Дата начала" required></ion-datetime>
+      </ion-col>
+    </ion-row>
+    <ion-row responsive-sm>
+      <ion-col>
+        <ion-datetime displayFormat="DD MMM YYYY" placeholder="Дата завершения" required></ion-datetime>
+      </ion-col>
+    </ion-row>
+    <ion-row responsive-sm>
+      <ion-col text-center>
+        <ion-button typeof="submit" color="success" size="medium" text-capitalize>Сохранить</ion-button>
+      </ion-col>
+      <ion-col text-center>
+        <ion-button (click)="onCancel()" color="danger" size="medium" text-capitalize>Отменить</ion-button>
+        </ion-col>
+    </ion-row>
+  </form>
 </ion-content>

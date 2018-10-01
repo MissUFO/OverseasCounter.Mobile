@@ -19,15 +19,15 @@
   width: 50%;
 }
 
-$text-input-highlight-color-valid: #3ebfe2;
-$text-input-md-show-success-highlight: true;
-$text-input-md-show-error-highlight: true;
+ion-input {
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 10px;
+  background-color: #fafafa;
+}
 
-// Input highlight - normal
-$text-input-md-highlight-color: #3ebfe2;
-
-// Input highlight - valid
-$text-input-md-hightlight-color-valid: color(#3ebfe2, secondary);
-
-// Input highlight - invalid
-$text-input-md-hightlight-color-invalid: red;
+ion-input input {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  border: 0px !important;
+}

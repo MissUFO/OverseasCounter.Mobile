@@ -7,19 +7,12 @@ import { IonicModule } from '@ionic/angular';
 
 import { LoginRestorePage } from './login-restore.page';
 
-const routes: Routes = [
-  {
-    path: '',
-    component: LoginRestorePage
-  }
-];
-
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild([{ path: '', component: LoginRestorePage }])
   ],
   declarations: [LoginRestorePage]
 })
