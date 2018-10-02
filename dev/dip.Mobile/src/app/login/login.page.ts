@@ -40,11 +40,11 @@ export class LoginPage {
 
      if(authorized)
      {
-         this.router.navigateByUrl('/tabs/(home:home)');
+         this.checkOnboardingAndRedirect();
      }
   }
 
-    onLogin(form: NgForm) {
+  onLogin(form: NgForm) {
 
     this.submitted = true;
 
@@ -57,7 +57,7 @@ export class LoginPage {
   
       //this.userService.login(this.login.username);
 
-      this.router.navigateByUrl('/tabs/(home:home)');
+      this.checkOnboardingAndRedirect();
 
     }else
     {
@@ -78,7 +78,8 @@ export class LoginPage {
             console.log(result.status)
             console.log(result.authResponse.userID);
 
-            this.router.navigateByUrl('/tabs/(home:home)');
+            this.checkOnboardingAndRedirect();
+
         }else
         {
             this.showErrorToast();
@@ -86,21 +87,37 @@ export class LoginPage {
   }
 
   onGoogle() {
-    this.router.navigateByUrl('/tabs/(home:home)');
+    this.checkOnboardingAndRedirect();
   }
 
   onTwitter() {
-    this.router.navigateByUrl('/tabs/(home:home)');
+    this.checkOnboardingAndRedirect();
   }
 
   onSignup() {
     this.router.navigateByUrl('/login-registration');
   }
+
+  onRestore() {
+    this.router.navigateByUrl('/login-restore');
+  }
+
+  checkOnboardingAndRedirect()
+  {
+        this.storage.get('onboarded').then(res => {
+          if (res!=null && res!=undefined && res) {
+              this.router.navigateByUrl('/tabs/(home:home)');
+          }else
+          {
+              this.router.navigateByUrl('/onboard');
+          }
+        });
+  }
  
   async showErrorToast() {
     const toast = await this.toastController.create({
-      message: "Не удалось авторизоваться. Пользователь не найден.",
-      duration: 2000
+      message: "Пользователь не найден. Возможно, логин или пароль указаны не верно, или вы не зарегистрированы.",
+      duration: 3000
     });
     toast.present();
   }

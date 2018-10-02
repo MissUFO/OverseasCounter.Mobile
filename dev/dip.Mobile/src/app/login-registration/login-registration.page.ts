@@ -14,19 +14,17 @@ import { UserAccount } from '../_interfaces/useraccount';
 export class LoginRegistrationPage implements OnInit {
 
   signup: UserAccount = { username: '', password: '' };
-  submitted = false;
-
+  
   constructor(
     public router: Router,
     public userService: UserService
   ) {}
 
   onSignup(form: NgForm) {
-    this.submitted = true;
-
+    
     if (form.valid) {
       this.userService.signup(this.signup.username);
-      this.router.navigateByUrl('/app/tabs/(schedule:schedule)');
+      this.router.navigateByUrl('/tabs/(home:home)');
     }
   }
 

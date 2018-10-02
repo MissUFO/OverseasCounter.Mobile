@@ -10,21 +10,28 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-row responsive-sm>
+    <ion-col text-center>
+      Введите ваше имя пользователя (email) и мы отправим вам инструкцию по восстановлению доступа
+    </ion-col>
+  </ion-row>
+  <ion-row responsive-sm>
+    <ion-col text-center>
+
+    </ion-col>
+  </ion-row>
+  <form #restoreForm="ngForm" novalidate>
     <ion-row responsive-sm>
-        <ion-col text-center>
-            Введите ваше имя пользователя (email) и мы отправим вам инструкцию по восстановлению доступа
-        </ion-col>
+      <ion-col>
+        <ion-input placeholder="E-mail" [(ngModel)]="restore.username" name="username" type="text" #username="ngModel" spellcheck="false" autocapitalize="off"
+                   required>
+        </ion-input>
+      </ion-col>
     </ion-row>
-    <form #loginRestoreForm="ngForm" novalidate>
-      <ion-list lines="none">
-        <ion-item>
-          <ion-input placeholder="E-mail" [(ngModel)]="login.username" name="username" type="text" #username="ngModel" spellcheck="false" autocapitalize="off"
-                     required>
-          </ion-input>
-        </ion-item>
-        <ion-item text-center>
-          <ion-button (click)="onRestore(loginRestoreForm)" type="submit" color="success" size="medium" text-capitalize>Восстановить пароль</ion-button>
-        </ion-item>
-      </ion-list>
-    </form>
+    <ion-row responsive-sm>
+      <ion-col text-center>
+        <ion-button (click)="onRestore(restoreForm)" type="submit" color="success" size="medium">Восстановить пароль</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
 </ion-content>

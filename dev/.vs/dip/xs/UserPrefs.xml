@@ -1,25 +1,15 @@
 ﻿<Properties StartupConfiguration="{1EB9C951-AC0F-4CA3-842F-4B140CB269CB}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="dip.Mobile/package.json">
+  <MonoDevelop.Ide.Workbench ActiveDocument="dip.Mobile/src/app/login/login.page.ts">
     <Files>
-      <File FileName="dip.Mobile/src/app/app.component.ts" Line="124" Column="51" />
-      <File FileName="dip.Mobile/src/app/login/login.page.ts" Line="8" Column="1" />
-      <File FileName="dip.Mobile/src/app/home/home.page.ts" Line="64" Column="15" />
-      <File FileName="dip.Mobile/src/app/_interfaces/usergeolocation.ts" Line="1" Column="1" />
-      <File FileName="dip.Mobile/src/app/home/home.page.html" Line="36" Column="11" />
-      <File FileName="dip.Mobile/src/app/login/login.page.html" Line="59" Column="31" />
-      <File FileName="dip.Mobile/src/global.scss" Line="32" Column="25" />
-      <File FileName="dip.Mobile/src/app/trip-add/trip-add.page.html" Line="8" Column="19" />
-      <File FileName="dip.Mobile/src/app/login-registration/login-registration.page.html" Line="16" Column="30" />
-      <File FileName="dip.Mobile/src/app/login-restore/login-restore.page.html" Line="26" Column="153" />
-      <File FileName="dip.Mobile/src/app/login-restore/login-restore.page.ts" Line="2" Column="41" />
-      <File FileName="dip.Mobile/src/main.ts" Line="1" Column="1" />
-      <File FileName="dip.Mobile/src/app/app.module.ts" Line="1" Column="1" />
-      <File FileName="dip.Mobile/src/app/app-routing.module.ts" Line="9" Column="102" />
-      <File FileName="dip.Mobile/src/app/login-restore/login-restore.module.ts" Line="15" Column="67" />
-      <File FileName="dip.Mobile/src/app/trip-add/trip-add.module.ts" Line="15" Column="65" />
-      <File FileName="dip.Mobile/src/app/login-restore/login-restore.page.scss" Line="1" Column="1" />
-      <File FileName="dip.Mobile/src/app/trip-add/trip-add.page.ts" Line="5" Column="42" />
-      <File FileName="dip.Mobile/package.json" Line="1" Column="1" />
+      <File FileName="dip.Mobile/src/app/app.component.ts" Line="44" Column="5" />
+      <File FileName="dip.Mobile/src/app/home/home.page.ts" Line="76" Column="35" />
+      <File FileName="dip.Mobile/src/app/onboard/onboard.page.ts" Line="34" Column="27" />
+      <File FileName="dip.Mobile/src/app/onboard/onboard.page.spec.ts" Line="1" Column="1" />
+      <File FileName="dip.Mobile/src/app/onboard/onboard.page.scss" Line="1" Column="1" />
+      <File FileName="dip.Mobile/src/app/onboard/onboard.page.html" Line="1" Column="12" />
+      <File FileName="dip.Mobile/src/app/onboard/onboard.module.ts" Line="8" Column="39" />
+      <File FileName="dip.Mobile/src/app/login/login.module.ts" Line="25" Column="34" />
+      <File FileName="dip.Mobile/src/app/login/login.page.ts" Line="106" Column="112" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Services.dip.WebAPI PreferredExecutionTarget="MonoDevelop.Default" />

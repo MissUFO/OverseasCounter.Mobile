@@ -42,8 +42,6 @@ export class AppComponent {
     this.initializeApp();
   }
 
-  location : UserGeoLocation;
-  
   initializeApp() {
 
     this.platform.ready().then(() => {
@@ -52,90 +50,111 @@ export class AppComponent {
         this.splashScreen.hide();
 
         this.startBackgroundProcess();
+        this.runBackgroundTask();
 
         this.router.navigate(['/login']);
     });
 
   }
 
-  startBackgroundProcess()
+  async startBackgroundProcess()
   {
 
       //stop background-fetch process (if it was started)
-      this.backgroundFetch.stop();
+      //this.backgroundFetch.stop();
+      await this.saveDebugInfo('Background Fetch status:' + await this.backgroundFetch.status() );
 
-          const config: BackgroundFetchConfig = {
-            stopOnTerminate: false, // Set true to cease background-fetch from operating after user "closes" the app. Defaults to true.
-          };
+      const config: BackgroundFetchConfig = {
+              stopOnTerminate: false, // Set true to cease background-fetch from operating after user "closes" the app. Defaults to true.
+      };
 
-          this.backgroundFetch.configure(config)
-              .then(() => {
+      this.backgroundFetch.configure(config).then(() => {
 
-                 this.saveDebugInfo('Background Fetch initialized');
+         this.runBackgroundTask();
+         this.backgroundFetch.finish();
 
-                 this.saveDebugInfo('Getting current location...');
+      })
+      .catch(e => this.saveDebugInfo('Error initializing background fetch' + e));
 
-                 this.geolocation.getCurrentPosition().then((resp) => {
+      // Start the background-fetch API. Your callbackFn provided to #configure will be executed each time a background-fetch event occurs. NOTE the #configure method automatically calls #start. You do not have to call this method after you #configure the plugin
+      this.backgroundFetch.start();
 
-                     if(resp!=null && resp!=undefined)
-                         {
-                            this.location.latitude = resp.coords.latitude;
-                            this.location.longitude = resp.coords.longitude;
-                            this.location.timestamp = resp.timestamp;
+      await this.saveDebugInfo('Background Fetch status:' + await this.backgroundFetch.status() );
 
-                            this.saveDebugInfo(this.location.latitude + ', ' + this.location.longitude);
-                     }else
-                     {
-                         this.saveDebugInfo('Responce was undefined');
-                     }
+      // Stop the background-fetch API from firing fetch events. Your callbackFn provided to #configure will no longer be executed.
+      //this.backgroundFetch.stop();
+  }
 
-                 }).catch((error) => {
+  runBackgroundTask()
+  {
+      this.saveDebugInfo('Background Fetch initialized');
 
-                     this.saveDebugInfo('Error getting location. ' + error);
+      try
+      {
+         this.geolocation.getCurrentPosition().then((resp) => {
 
-                 }).then( resp => {
+             this.saveDebugInfo('Getting current location...');
+             let location = new UserGeoLocation();
 
-                     this.setCurrentCountry(this.location); 
-                     this.saveDebugInfo(this.location.countryname + ' ' + this.location.address);
+             if(resp!=null && resp!=undefined)
+             {
+                 this.saveDebugInfo('response not null');
 
-                } );
+                 location.latitude = resp.coords.latitude;
+                 location.longitude = resp.coords.longitude;
+                 location.timestamp = resp.timestamp;
 
-                 this.backgroundFetch.finish();
+                 this.saveDebugInfo('coordinates: ' + resp.coords.latitude + ', ' + resp.coords.longitude);
 
-             })
-             .catch(e => this.saveDebugInfo('Error initializing background fetch' + e));
+                 this.setCurrentCountry(location).then((result) => {
 
-          // Start the background-fetch API. Your callbackFn provided to #configure will be executed each time a background-fetch event occurs. NOTE the #configure method automatically calls #start. You do not have to call this method after you #configure the plugin
-          this.backgroundFetch.start();
+                     location = result;
+                     this.saveDebugInfo('country: ' + location.countryname + ' ' + location.address);
+                 });
 
-          // Stop the background-fetch API from firing fetch events. Your callbackFn provided to #configure will no longer be executed.
-          //this.backgroundFetch.stop();
+             }else
+             {
+                 this.saveDebugInfo('Responce was undefined');
+             }
+
+         }).catch((error) => {
+
+             this.saveDebugInfo('Error getting location. ' + error);
+
+         });
+
+      }catch(e)
+      {
+          console.log(e);
+      }
+ }
+
+  saveDebugInfo(trace)
+  {
+      let debugInfo = '';
+
+      this.storage.get('debugInfo').then((val) => {
+          if(val!=null){
+              debugInfo = val;
+          }
+          debugInfo += '[' + new Date().toLocaleString() + ']';
+          debugInfo += ': '+ trace + '\r\n';
+          this.storage.set('debugInfo', debugInfo);
+      });
 
   }
 
-    saveDebugInfo(trace)
-    {
-        let debugInfo = '';
 
-        this.storage.get('debugInfo').then((val) => {
-            if(val!=null){
-                debugInfo = val;
-            }
-            debugInfo += '[' + new Date().toLocaleString() + ']';
-            debugInfo += ': '+ trace + '\r\n';
-            this.storage.set('debugInfo', debugInfo);
-        });
+  setCurrentCountry(location: UserGeoLocation)
+  {
+      this.saveDebugInfo('trying to set country');
 
-    }
+      return this.geoService.getLocationAsync(location.latitude, location.longitude).then((result) => {
 
+          location.countryname = result.countryname;
+          location.address = result.address;
 
-    async setCurrentCountry(location: any)
-    {
-        let result = await this.geoService.getLocationAsync(location.latitude, location.longitude);
-
-        this.location.countryname = result.countryname;
-        this.location.address = result.address;
-
-        return this.location;
-    }
+          return location;
+      });
+  }
 }
