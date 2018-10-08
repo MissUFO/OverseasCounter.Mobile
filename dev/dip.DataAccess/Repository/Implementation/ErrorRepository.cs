@@ -50,7 +50,7 @@ namespace dip.DataAccess.Repository.Implementation
            
             using (var dataManager = new DataManager.Implementation.DataManager(ConnectionString))
             {
-                dataManager.ExecuteString = "[logs].[AppError_AddEdit]";
+                dataManager.ExecuteString = "[logs].[Error_AddEdit]";
                 dataManager.Add("@UserId", SqlDbType.Int, ParameterDirection.Input, entity.UserId);
                 dataManager.Add("@ErrorCode", SqlDbType.BigInt, ParameterDirection.Input, entity.ErrorCode);
                 dataManager.Add("@ErrorMessage", SqlDbType.NVarChar, ParameterDirection.Input, entity.ErrorMessage);

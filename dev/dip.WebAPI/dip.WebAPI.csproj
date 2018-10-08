@@ -85,6 +85,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\VisaController.cs" />
+    <Compile Include="Controllers\CountryController.cs" />
+    <Compile Include="Controllers\DaysController.cs" />
     <Compile Include="Controllers\SettingsController.cs" />
     <Compile Include="Controllers\LogController.cs" />
     <Compile Include="Controllers\UserController.cs" />

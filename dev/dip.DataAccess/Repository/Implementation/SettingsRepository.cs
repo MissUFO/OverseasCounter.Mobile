@@ -29,7 +29,7 @@ namespace dip.DataAccess.Repository.Implementation
 
             using (var dataManager = new DataManager.Implementation.DataManager(ConnectionString))
             {
-                dataManager.ExecuteString = "[conf].[AppSettings_List]";
+                dataManager.ExecuteString = "[conf].[Settings_List]";
                 dataManager.Add("@Xml", SqlDbType.Xml, ParameterDirection.Output);
                 dataManager.ExecuteReader();
                 XElement xmlOut = XElement.Parse(dataManager["@Xml"].Value.ToString());
@@ -56,12 +56,12 @@ namespace dip.DataAccess.Repository.Implementation
 
             using (var dataManager = new DataManager.Implementation.DataManager(ConnectionString))
             {
-                dataManager.ExecuteString = "[conf].[AppSettings_GetByKey]";
+                dataManager.ExecuteString = "[conf].[Settings_GetByKey]";
                 dataManager.Add("@Key", SqlDbType.NVarChar, ParameterDirection.Input, key);
                 dataManager.Add("@Xml", SqlDbType.Xml, ParameterDirection.Output);
                 dataManager.ExecuteReader();
                 XElement xmlOut = XElement.Parse(dataManager["@Xml"].Value.ToString());
-                entity.UnpackXML(xmlOut.Element("AppSetting"));
+                entity.UnpackXML(xmlOut.Element("Setting"));
             }
 
             return entity;

@@ -50,7 +50,7 @@ namespace dip.DataAccess.Repository.Implementation
            
             using (var dataManager = new DataManager.Implementation.DataManager(ConnectionString))
             {
-                dataManager.ExecuteString = "[logs].[AppLog_AddEdit]";
+                dataManager.ExecuteString = "[logs].[Log_AddEdit]";
                 dataManager.Add("@UserId", SqlDbType.Int, ParameterDirection.Input, entity.UserId);
                 dataManager.Add("@ActionType", SqlDbType.Int, ParameterDirection.Input, (int)entity.ActionType);
                 dataManager.Add("@PageUrl", SqlDbType.NVarChar, ParameterDirection.Input, entity.PageUrl);
