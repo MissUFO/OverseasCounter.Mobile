@@ -33,16 +33,16 @@ namespace dip.DataAccess.DataObject.Implementation
       get { return _status; }
       set { _status = value; }
     }
-    private bool _status = false;
+    private bool _status = true;
 
     public DateTime LastLoginOn { get; set; }
 
-    public UserTrackingSchedule UserTrackingSchedule
+    public List<UserTrackingSchedule> UserTrackingSchedules
     {
-      get { return _userTrackingSchedule; }
-      set { _userTrackingSchedule = value; }
+      get { return _userTrackingSchedules; }
+      set { _userTrackingSchedules = value; }
     }
-    private UserTrackingSchedule _userTrackingSchedule = new UserTrackingSchedule();
+    private List<UserTrackingSchedule> _userTrackingSchedules = new List<UserTrackingSchedule>();
 
     public List<UserCountryVisa> UserCountryVisas
     {
@@ -69,7 +69,7 @@ namespace dip.DataAccess.DataObject.Implementation
       this.ModifiedOn = xml.Attribute("ModifiedOn").ToType<DateTime>();
       this.LastLoginOn = xml.Attribute("LastLoginOn").ToType<DateTime>();
 
-      this.UserTrackingSchedule.UnpackXML(xml.Element("UserTrackingSchedule"));
+      this.UserTrackingSchedules.UnpackXML(xml.Element("UserTrackingSchedules"));
       this.UserCountryVisas.UnpackXML(xml.Element("UserCountryVisas"));
       
     }

@@ -1,7 +1,8 @@
 ﻿
 CREATE PROCEDURE [auth].[User_AddEdit]
-		  @Email nvarchar(255)
-		  ,@Password nvarchar(255)
+		   @UserId int = null
+		  ,@Email nvarchar(255)
+		  ,@Password nvarchar(255) = null
 		  ,@FirstName nvarchar(255) = null
 		  ,@LastName nvarchar(255) = null
 		  ,@MiddleName nvarchar(255) = null
@@ -16,7 +17,7 @@ BEGIN
 
 	SELECT @ID = usr.[Id]
 	  FROM [auth].[User] as usr
-	WHERE usr.[Email] = @Email
+	WHERE (@UserId is not null and @UserId > 0 and usr.[Id] = @UserId) or usr.[Email] = @Email 
 	
 	IF (@ID IS NOT NULL AND @ID <> 0)
 	BEGIN
@@ -61,6 +62,27 @@ BEGIN
            , GETDATE()
            , GETDATE()
            , GETDATE())
+	
+	-- Create tracking schdule
+	SELECT @ID = usr.[Id]
+	  FROM [auth].[User] as usr
+	WHERE usr.[Email] = @Email
+	
+	INSERT INTO [dbo].[UserTrackingSchedule]
+           ([UserId]
+           ,[ScheduledHours]
+           ,[ScheduledDays]
+           ,[LastRun]
+           ,[CreatedOn]
+           ,[ModifiedOn])
+     VALUES
+           (@ID
+           ,24
+           ,1
+           ,null
+           ,GETDATE()
+           ,GETDATE())
+
 	END
 
 END

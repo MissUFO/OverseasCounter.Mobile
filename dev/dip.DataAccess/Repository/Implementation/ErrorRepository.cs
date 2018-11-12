@@ -62,14 +62,6 @@ namespace dip.DataAccess.Repository.Implementation
 
             return entity;
         }
-
-        /// <summary>
-        /// Delete single item (NOT IMPLEMENTED)
-        /// </summary>
-        public bool Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
-
+    
     }
 }

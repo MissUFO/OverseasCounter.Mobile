@@ -17,6 +17,6 @@ namespace dip.DataAccess.Repository.Interface
 
         List<T> List(T entity);
 
-        bool Delete(Int32 id);
+        //bool Delete(Int32 id);
     }
 }

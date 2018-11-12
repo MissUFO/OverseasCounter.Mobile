@@ -17,40 +17,31 @@ BEGIN
 								  ,usr.[CreatedOn]
 								  ,usr.[ModifiedOn]
 								  ,usr.[LastLoginOn]
-								  ,(SELECT	 
-										   uts.[Id]
-										  ,uts.[UserId]
-										  ,uts.[ScheduledHours]
-										  ,uts.[ScheduledDays]
-										  ,uts.[LastRun]
-										  ,uts.[CreatedOn]
-										  ,uts.[ModifiedOn]
+								  ,(SELECT (SELECT
+										uts.*
 										FROM [dbo].[UserTrackingSchedule] AS uts
 										WHERE uts.[UserId] = usr.[Id]
+										ORDER BY uts.CreatedOn ASC
 										FOR XML RAW('UserTrackingSchedule'), TYPE) 
+								   FOR XML PATH('UserTrackingSchedules'),TYPE)
 								  ,(SELECT (SELECT	 
-											   ucv.[Id]
-											  ,ucv.[UserId]
-											  ,ucv.[VisaTypeId]
-											  ,ucv.[AllowNotification]
-											  ,ucv.[CreatedOn]
-											  ,ucv.[ModifiedOn]
+											   ucv.*
 											  ,(SELECT d.*
 												FROM [dbo].[Days] AS d
-												WHERE d.[UserCountryVisaId]=ucv.[Id]
+												WHERE d.[CountryVisaId]=ucv.[VisaId] and d.[CountryId] = ucv.[CountryId]
 												FOR XML RAW('Days'), TYPE) 
 											  ,(SELECT  cvt.*
-													   ,(SELECT	 c.*
-															,(SELECT cfp.*
-															  FROM [dict].[CountryFinancialPeriod] AS cfp
-															  WHERE cfp.[CountryId]=c.[Id]
-															  FOR XML RAW('CountryFinancialPeriod'), TYPE) 
-														 FROM [dict].[Country] AS c
-													     WHERE c.[Id]=cvt.[CountryId]
-														 FOR XML RAW('Country'), TYPE) 
-												FROM [dict].[CountryVisaType] AS cvt
-												WHERE cvt.[Id]=ucv.[VisaTypeId]
-											    FOR XML RAW('CountryVisaType'), TYPE) 
+												FROM [dict].[CountryVisa] AS cvt
+												WHERE cvt.[Id]=ucv.[VisaId]
+												FOR XML RAW('CountryVisa'), TYPE) 
+											  ,(SELECT  c.*
+												FROM [dict].[Country] AS c
+												WHERE c.[Id]=ucv.[CountryId]
+												FOR XML RAW('Country'), TYPE) 
+											  ,(SELECT cfp.*
+												FROM [dict].[CountryFinancialPeriod] AS cfp
+												WHERE cfp.[CountryId]=ucv.[CountryId]
+												FOR XML RAW('CountryFinancialPeriod'), TYPE) 
 										FROM [map].[UserCountryVisa] AS ucv
 										WHERE ucv.[UserId] = usr.[Id]
 										FOR XML RAW('UserCountryVisa'), TYPE) 

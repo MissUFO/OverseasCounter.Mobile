@@ -4,10 +4,16 @@
     [DateStart] DATETIME NULL,
     [DateEnd]   DATETIME NULL,
     CONSTRAINT [PK_CountryFinancialPeriod] PRIMARY KEY CLUSTERED ([Id] ASC),
-    CONSTRAINT [FK_CountryFinancialPeriod_Country] FOREIGN KEY ([CountryId]) REFERENCES [dict].[Country] ([Id]) NOT FOR REPLICATION
+    CONSTRAINT [FK_CountryFinancialPeriod_Country] FOREIGN KEY ([CountryId]) REFERENCES [dict].[Country] ([Id]) ON DELETE CASCADE NOT FOR REPLICATION
 );
 
 
 GO
 ALTER TABLE [dict].[CountryFinancialPeriod] NOCHECK CONSTRAINT [FK_CountryFinancialPeriod_Country];
+
+
+
+
+GO
+
 

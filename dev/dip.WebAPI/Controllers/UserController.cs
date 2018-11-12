@@ -28,36 +28,68 @@ namespace dip.WebAPI.Controllers
     public HttpResponseMessage LogIn(string login, string password)
     {
       var repository = new UserRepository();
-
       var entity = repository.Login(login, password);
       var json = JsonConvert.SerializeObject(entity);
       
       return new HttpResponseMessage { Content = new StringContent(json, Encoding.UTF8, "application/json") };
     }
 
-    
+
     [HttpPost]
     [Route("create")]
     [AcceptVerbs("POST", "PUT")]
-    public HttpResponseMessage Create(User user)
+    public HttpResponseMessage Create(string email, string password, string firstName, string lastName, string middleName, string phoneNumber, byte[] photo, bool status = true)
     {
       var repository = new UserRepository();
 
-      var entity = repository.AddEdit(user);
-      var json = JsonConvert.SerializeObject(entity);
+      var user = repository.GetByEmail(email);
+      if (user == null || user.Id == 0)
+      {
+        var entity = new User();
+        entity.Email = email;
+        entity.Password = password;
+        entity.FirstName = firstName;
+        entity.LastName = lastName;
+        entity.MiddleName = middleName;
+        entity.Photo = photo;
+        entity.PhoneNumber = phoneNumber;
+        entity.Status = status;
 
-      return new HttpResponseMessage { Content = new StringContent(json, Encoding.UTF8, "application/json") };
+        entity = repository.AddEdit(entity);
+        var json = JsonConvert.SerializeObject(entity);
+        return new HttpResponseMessage { Content = new StringContent(json, Encoding.UTF8, "application/json") };
+      }
+      else
+      {
+        var json = new { status = true, message = "Пользователь с введенным логином уже существует." };
+        return new HttpResponseMessage { Content = new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json") };
+      }
     }
 
     
     [HttpPost]
     [Route("update")]
     [AcceptVerbs("POST", "PUT")]
-    public HttpResponseMessage Update(User user)
+    public HttpResponseMessage Update(int userId, string email = null, string firstName = null, string lastName = null, string middleName = null, string phoneNumber = null)
     {
       var repository = new UserRepository();
 
-      var entity = repository.AddEdit(user);
+      var entity = repository.Get(userId);
+      if (entity != null && entity.Id > 0)
+      {
+        if (!string.IsNullOrEmpty(email))
+          entity.Email = email;
+        if (!string.IsNullOrEmpty(firstName))
+          entity.FirstName = firstName;
+        if (!string.IsNullOrEmpty(lastName))
+          entity.LastName = lastName;
+        if (!string.IsNullOrEmpty(middleName))
+          entity.MiddleName = middleName;
+        if (!string.IsNullOrEmpty(phoneNumber))
+          entity.PhoneNumber = phoneNumber;
+
+        entity = repository.AddEdit(entity);
+      }
       var json = JsonConvert.SerializeObject(entity);
 
       return new HttpResponseMessage { Content = new StringContent(json, Encoding.UTF8, "application/json") };
@@ -70,8 +102,12 @@ namespace dip.WebAPI.Controllers
     public HttpResponseMessage ChangePicture(int userId, byte[] photo)
     {
       var repository = new UserRepository();
-
-      var entity = new User();//repository.Login(login, password);
+      var entity = repository.Get(userId);
+      if (entity != null && entity.Id > 0)
+      {
+        entity.Photo = photo;
+        entity = repository.AddEdit(entity);
+      }
       var json = JsonConvert.SerializeObject(entity);
 
       return new HttpResponseMessage { Content = new StringContent(json, Encoding.UTF8, "application/json") };
@@ -81,11 +117,15 @@ namespace dip.WebAPI.Controllers
     [HttpPost]
     [Route("changePassword")]
     [AcceptVerbs("POST", "PUT")]
-    public HttpResponseMessage ChangePassword(int userId, string password)
+    public HttpResponseMessage ChangePassword(string login, string password, string passwordNew)
     {
       var repository = new UserRepository();
-
-      var entity = new User();
+      var entity = repository.Login(login, password);
+      if (entity != null && entity.Id > 0)
+      {
+        entity.Password = passwordNew;
+        entity = repository.AddEdit(entity);
+      }
       var json = JsonConvert.SerializeObject(entity);
 
       return new HttpResponseMessage { Content = new StringContent(json, Encoding.UTF8, "application/json") };
@@ -95,11 +135,15 @@ namespace dip.WebAPI.Controllers
     [HttpPost]
     [Route("changePhone")]
     [AcceptVerbs("POST", "PUT")]
-    public HttpResponseMessage ChangePhone(string login, string password)
+    public HttpResponseMessage ChangePhone(string login, string password, string phone)
     {
       var repository = new UserRepository();
-
-      var entity = new User();
+      var entity = repository.Login(login, password);
+      if (entity != null && entity.Id > 0)
+      {
+        entity.PhoneNumber = phone;
+        entity = repository.AddEdit(entity);
+      }
       var json = JsonConvert.SerializeObject(entity);
 
       return new HttpResponseMessage { Content = new StringContent(json, Encoding.UTF8, "application/json") };
@@ -108,12 +152,19 @@ namespace dip.WebAPI.Controllers
     [HttpPost]
     [Route("restorePassword")]
     [AcceptVerbs("POST", "PUT")]
-    public HttpResponseMessage RestorePassword(string email, string password, string password_new)
+    public HttpResponseMessage RestorePassword(string login, string phone)
     {
-      var repository = new UserRepository();
+      var json = JsonConvert.SerializeObject(new { status = false, message = "Пользователь с указанным логином не найден." });
 
-      var entity = new User();
-      var json = JsonConvert.SerializeObject(entity);
+      var repository = new UserRepository();
+      var entity = repository.GetByEmail(login);
+      if (entity != null && entity.Id > 0)
+      {
+        if (entity.PhoneNumber.Trim() != phone.Trim())
+          json = JsonConvert.SerializeObject(new { status = false, message = "Номер телефона не совпадает с телефоном в вашем профиле." });
+        else
+          json = JsonConvert.SerializeObject(entity);
+      }
 
       return new HttpResponseMessage { Content = new StringContent(json, Encoding.UTF8, "application/json") };
     }
@@ -122,7 +173,7 @@ namespace dip.WebAPI.Controllers
     [Route("logoff")]
     public HttpResponseMessage LogOff(int userId)
     {
-      var entity = new { OK = true };
+      var entity = new { status = true };
 
       var json = JsonConvert.SerializeObject(entity);
       return new HttpResponseMessage { Content = new StringContent(json, Encoding.UTF8, "application/json") };

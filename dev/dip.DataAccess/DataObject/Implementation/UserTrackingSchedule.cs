@@ -15,6 +15,10 @@ namespace dip.DataAccess.DataObject.Implementation
 
     public int ScheduledDays { get; set; }
 
+    public string ScheduledNotificationId { get; set; }
+
+    public bool Enabled { get; set; }
+
     public DateTime LastRun { get; set; }
 
     protected override void CreateObjectFromXml(XElement xml)
@@ -24,10 +28,14 @@ namespace dip.DataAccess.DataObject.Implementation
       this.ScheduledHours = xml.Attribute("ScheduledHours").ToType<int>();
       this.ScheduledDays = xml.Attribute("ScheduledDays").ToType<int>();
 
+      this.ScheduledNotificationId = xml.Attribute("ScheduledNotificationId").ToType<string>();
+      this.Enabled = Convert.ToBoolean(xml.Attribute("Enabled").ToType<int>());
+
       this.CreatedOn = xml.Attribute("CreatedOn").ToType<DateTime>();
       this.ModifiedOn = xml.Attribute("ModifiedOn").ToType<DateTime>();
 
       this.LastRun = xml.Attribute("LastRun").ToType<DateTime>();
+
     }
   }
 }

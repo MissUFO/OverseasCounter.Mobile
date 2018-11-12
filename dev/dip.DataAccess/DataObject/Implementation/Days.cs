@@ -9,21 +9,21 @@ namespace dip.DataAccess.DataObject.Implementation
   /// </summary>
   public class Days : Entity
   {
-    public int UserCountryVisaId { get; set; }
-
+    public int UserId { get; set; }
+    public int CountryId { get; set; }
+    public int? CountryVisaId { get; set; }
     public int DaysCount { get; set; }
-
-    public DateTime DateStart { get; set; }
-    public DateTime DateEnd { get; set; }
 
     protected override void CreateObjectFromXml(XElement xml)
     {
       this.Id = xml.Attribute("Id").ToType<int>();
-      this.UserCountryVisaId = xml.Attribute("UserCountryVisaId").ToType<int>();
+      this.UserId = xml.Attribute("UserId").ToType<int>();
+      this.CountryId = xml.Attribute("CountryId").ToType<int>();
+      this.CountryVisaId = xml.Attribute("CountryVisaId").ToType<int>();
       this.DaysCount = xml.Attribute("Days").ToType<int>();
 
-      this.DateStart = xml.Attribute("DateStart").ToType<DateTime>();
-      this.DateEnd = xml.Attribute("DateEnd").ToType<DateTime>();
+      this.CreatedOn = xml.Attribute("CreatedOn").ToType<DateTime>();
+      this.ModifiedOn = xml.Attribute("ModifiedOn").ToType<DateTime>();
     }
   }
 }

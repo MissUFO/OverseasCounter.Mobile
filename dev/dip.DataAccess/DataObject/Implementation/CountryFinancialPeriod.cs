@@ -12,7 +12,6 @@ namespace dip.DataAccess.DataObject.Implementation
     public int CountryId { get; set; }
     public DateTime DateStart { get; set; }
     public DateTime DateEnd { get; set; }
-
     
     protected override void CreateObjectFromXml(XElement xml)
     {
