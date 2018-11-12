@@ -15,6 +15,7 @@ import { IonicStorageModule } from '@ionic/storage';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { BackgroundFetch, BackgroundFetchConfig } from '@ionic-native/background-fetch/ngx';
 import { Facebook } from '@ionic-native/facebook/ngx';
+import { Push, PushObject, PushOptions } from '@ionic-native/push/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,6 +33,7 @@ import { Facebook } from '@ionic-native/facebook/ngx';
     Geolocation,
     BackgroundFetch,
     Facebook,
+    Push,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
