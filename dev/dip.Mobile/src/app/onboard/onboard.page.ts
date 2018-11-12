@@ -17,12 +17,15 @@ export class OnboardPage implements OnInit {
   constructor(
     public menu: MenuController,
     public router: Router,
-    public storage: Storage) { }
+    public storage: Storage) 
+  {
+
+  }
 
   startApp() {
-    this.router
+      this.router
       .navigateByUrl('/tabs/(home:home)')
-      .then(() => this.storage.set('ion_did_tutorial', 'true'));
+      .then(() => this.storage.set('onboarded', 'true'));
   }
 
   onSlideChangeStart(event) {
@@ -30,12 +33,6 @@ export class OnboardPage implements OnInit {
   }
 
   ionViewWillEnter() {
-    this.storage.get('ion_did_tutorial').then(res => {
-      if (res) {
-        this.router.navigateByUrl('/tabs/(home:home)');
-      }
-    });
-
     this.menu.enable(false);
   }
 

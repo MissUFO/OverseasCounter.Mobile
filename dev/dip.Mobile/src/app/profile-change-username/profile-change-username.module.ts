@@ -5,15 +5,22 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { LoginRestorePage } from './login-restore.page';
+import { ProfileChangeUsernamePage } from './profile-change-username.page';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: ProfileChangeUsernamePage
+  }
+];
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild([{ path: '', component: LoginRestorePage }])
+    RouterModule.forChild(routes)
   ],
-  declarations: [LoginRestorePage]
+  declarations: [ProfileChangeUsernamePage]
 })
-export class LoginRestorePageModule {}
+export class ProfileChangeUsernamePageModule {}

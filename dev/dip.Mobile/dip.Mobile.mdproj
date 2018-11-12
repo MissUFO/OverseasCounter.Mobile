@@ -34986,6 +34986,21 @@
     <None Include="src\app\_interfaces\user.ts" />
     <None Include="src\app\_services\geo.service.ts" />
     <None Include="src\app\_services\geo.service.spec.ts" />
+    <None Include="src\app\profile-change-password\profile-change-password.module.ts" />
+    <None Include="src\app\profile-change-password\profile-change-password.page.html" />
+    <None Include="src\app\profile-change-password\profile-change-password.page.scss" />
+    <None Include="src\app\profile-change-password\profile-change-password.page.spec.ts" />
+    <None Include="src\app\profile-change-password\profile-change-password.page.ts" />
+    <None Include="src\app\profile-change-picture\profile-change-picture.module.ts" />
+    <None Include="src\app\profile-change-picture\profile-change-picture.page.html" />
+    <None Include="src\app\profile-change-picture\profile-change-picture.page.scss" />
+    <None Include="src\app\profile-change-picture\profile-change-picture.page.spec.ts" />
+    <None Include="src\app\profile-change-picture\profile-change-picture.page.ts" />
+    <None Include="src\app\profile-change-username\profile-change-username.module.ts" />
+    <None Include="src\app\profile-change-username\profile-change-username.page.html" />
+    <None Include="src\app\profile-change-username\profile-change-username.page.scss" />
+    <None Include="src\app\profile-change-username\profile-change-username.page.spec.ts" />
+    <None Include="src\app\profile-change-username\profile-change-username.page.ts" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="cert\" />

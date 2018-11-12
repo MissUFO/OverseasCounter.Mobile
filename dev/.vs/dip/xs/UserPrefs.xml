@@ -1,10 +1,15 @@
 ﻿<Properties StartupConfiguration="{1EB9C951-AC0F-4CA3-842F-4B140CB269CB}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="dip.Mobile/src/app/login/login.page.ts">
     <Files>
-      <File FileName="dip.Mobile/src/app/home/home.page.ts" Line="28" Column="1" />
-      <File FileName="dip.Mobile/src/app/app.component.ts" Line="13" Column="55" />
-      <File FileName="dip.Mobile/src/app/app.module.ts" Line="17" Column="55" />
-      <File FileName="dip.Mobile/src/app/login/login.page.ts" Line="28" Column="1" />
+      <File FileName="dip.Mobile/src/app/app.component.ts" Line="44" Column="5" />
+      <File FileName="dip.Mobile/src/app/home/home.page.ts" Line="76" Column="35" />
+      <File FileName="dip.Mobile/src/app/onboard/onboard.page.ts" Line="34" Column="27" />
+      <File FileName="dip.Mobile/src/app/onboard/onboard.page.spec.ts" Line="1" Column="1" />
+      <File FileName="dip.Mobile/src/app/onboard/onboard.page.scss" Line="1" Column="1" />
+      <File FileName="dip.Mobile/src/app/onboard/onboard.page.html" Line="1" Column="12" />
+      <File FileName="dip.Mobile/src/app/onboard/onboard.module.ts" Line="8" Column="39" />
+      <File FileName="dip.Mobile/src/app/login/login.module.ts" Line="25" Column="34" />
+      <File FileName="dip.Mobile/src/app/login/login.page.ts" Line="106" Column="112" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Services.dip.WebAPI PreferredExecutionTarget="MonoDevelop.Default" />

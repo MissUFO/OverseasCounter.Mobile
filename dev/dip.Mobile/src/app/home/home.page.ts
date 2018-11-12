@@ -63,6 +63,7 @@ export class HomePage {
             console.log('Error getting location', error);
         }).then( resp => this.setCurrentCountry(this.user.location) );
 
+        this.getDebugInfo();
     }
 
     async setCurrentCountry(location: any)
@@ -78,6 +79,13 @@ export class HomePage {
     goProfile()
     {
         this.router.navigateByUrl('/tabs/(profile:profile)');
+    }
+
+    getDebugInfo()
+    {
+        this.storage.get('debugInfo').then((val) => {
+            this.trace = val;
+        });
     }
 
 }
