@@ -90,7 +90,6 @@ UpgradeLog*.htm
 # SpecFlow specific
 *.feature.cs
 *.feature.xlsx.*
-*.Specs_*.html*.Specs_*.html
 *.Specs_*.html
 *.cache
 
