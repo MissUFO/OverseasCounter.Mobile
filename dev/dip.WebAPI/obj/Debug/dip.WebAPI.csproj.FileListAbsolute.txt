@@ -137,3 +137,4 @@ C:\Work\overseascounter\dev\dip.WebAPI\obj\Debug\dip.WebAPI.dll
 C:\Work\overseascounter\dev\dip.WebAPI\obj\Debug\dip.WebAPI.pdb
 C:\Work\overseascounter\dev\dip.WebAPI\bin\Microsoft.Azure.NotificationHubs.dll
 C:\Work\overseascounter\dev\dip.WebAPI\bin\Microsoft.Azure.NotificationHubs.xml
+C:\Work\overseascounter\dev\dip.WebAPI\bin\dip.WebAPI.xml

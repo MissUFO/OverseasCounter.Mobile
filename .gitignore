@@ -91,3 +91,4 @@ UpgradeLog*.htm
 *.feature.cs
 *.feature.xlsx.*
 *.Specs_*.html
+*.jfm

@@ -90,3 +90,6 @@ C:\Work\overseascounter\dev\dip.WebAPI\obj\Release\dip.WebAPI.csproj.CoreCompile
 C:\Work\overseascounter\dev\dip.WebAPI\obj\Release\dip.WebAPI.csproj.CopyComplete
 C:\Work\overseascounter\dev\dip.WebAPI\obj\Release\dip.WebAPI.dll
 C:\Work\overseascounter\dev\dip.WebAPI\obj\Release\dip.WebAPI.pdb
+C:\Work\overseascounter\dev\dip.WebAPI\bin\dip.WebAPI.xml
+C:\Work\overseascounter\dev\dip.WebAPI\bin\Microsoft.Azure.NotificationHubs.dll
+C:\Work\overseascounter\dev\dip.WebAPI\bin\Microsoft.Azure.NotificationHubs.xml
