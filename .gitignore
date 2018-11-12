@@ -93,3 +93,5 @@ UpgradeLog*.htm
 *.Specs
 _*.html
 *.cache
+*.jfm
+*.suo
