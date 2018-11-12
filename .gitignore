@@ -96,3 +96,5 @@ UpgradeLog*.htm
 *.cache
 
 *.cache
+
+dev/.vs/dip/xs/UserPrefs.xml
