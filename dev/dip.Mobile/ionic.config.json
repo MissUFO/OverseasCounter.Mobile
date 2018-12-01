@@ -1,8 +1,9 @@
 {
-  "name": "com.overseas.counter.mobile",
+  "name": "Калькулятор мигранта",
   "integrations": {
     "cordova": {}
   },
   "type": "angular",
-  "pro_id": "com.overseas.counter.mobile"
+  "pro_id": "com.overseas.counter.mobile",
+  "gcm_key": "“overseascounter”"
 }

@@ -90,6 +90,7 @@ UpgradeLog*.htm
 # SpecFlow specific
 *.feature.cs
 *.feature.xlsx.*
+<<<<<<< HEAD
 *.Specs_*.html
 *.cache
 
@@ -98,3 +99,8 @@ UpgradeLog*.htm
 *.cache
 
 dev/.vs/dip/xs/UserPrefs.xml
+=======
+*.Specs
+_*.html
+*.cache
+>>>>>>> origin/master

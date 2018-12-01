@@ -6,9 +6,10 @@ import { ToastController } from '@ionic/angular';
 import { UserService } from '../_services/user.service';
 import { UserAccount } from '../_interfaces/useraccount';
 
+import { SettingsService } from '../_services/settings.service';
+
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
 import { Storage } from '@ionic/storage';
-
 
 @Component({
   selector: 'app-login',
@@ -22,14 +23,14 @@ export class LoginPage {
   submitted = false;
 
   constructor(
-    public userService: UserService,
-    public router: Router,
-    private storage: Storage,
-    public toastController: ToastController,
-    private fb: Facebook
-    ) 
-  { 
-
+      public userService: UserService,
+      public settingsService: SettingsService, 
+      public router: Router,
+      private storage: Storage,
+      public toastController: ToastController,
+      private fb: Facebook
+    )
+  {  
      let authorized = false;
 
      this.storage.get('userInfo').then((val) => {
@@ -46,13 +47,16 @@ export class LoginPage {
 
   onLogin(form: NgForm) {
 
+      this.settingsService.get('CONTACT_EMAIL').then(itm=> 
+      {
+          console.log('test: ' + itm);
+      });
+    
+
     this.submitted = true;
 
     if (form.valid) {
-
-      console.log('User name:', this.login.username);
-      console.log('Password:', this.login.password);
-
+      
       this.storage.set('userInfo', this.login);
   
       //this.userService.login(this.login.username);
