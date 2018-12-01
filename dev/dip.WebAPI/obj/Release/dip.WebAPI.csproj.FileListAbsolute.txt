@@ -93,3 +93,6 @@ C:\Work\overseascounter\dev\dip.WebAPI\obj\Release\dip.WebAPI.pdb
 C:\Work\overseascounter\dev\dip.WebAPI\bin\dip.WebAPI.xml
 C:\Work\overseascounter\dev\dip.WebAPI\bin\Microsoft.Azure.NotificationHubs.dll
 C:\Work\overseascounter\dev\dip.WebAPI\bin\Microsoft.Azure.NotificationHubs.xml
+C:\Work\overseascounter\dev\dip.WebAPI\bin\System.Web.Cors.dll
+C:\Work\overseascounter\dev\dip.WebAPI\bin\System.Web.Http.Cors.dll
+C:\Work\overseascounter\dev\dip.WebAPI\bin\System.Web.Http.Cors.xml
