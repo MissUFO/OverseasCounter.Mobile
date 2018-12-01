@@ -35001,10 +35001,20 @@
     <None Include="src\app\profile-change-username\profile-change-username.page.scss" />
     <None Include="src\app\profile-change-username\profile-change-username.page.spec.ts" />
     <None Include="src\app\profile-change-username\profile-change-username.page.ts" />
+    <None Include="cert\ios\aps_development.cer" />
+    <None Include="cert\ios\dip-ios.certsigningrequest" />
+    <None Include="cert\ios\ios.p12" />
+    <None Include="cert\ios\overseas_counter_mobile.mobileprovision" />
+    <None Include="build.json" />
+    <None Include="cert\android\overseas_counter-release-key.keystore" />
+    <None Include="src\app\global.service.spec.ts" />
+    <None Include="src\app\global.service.ts" />
+    <None Include="src\app\_interfaces\setting.ts" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="cert\" />
     <Folder Include="src\app\_services\" />
     <Folder Include="src\app\_interfaces\" />
+    <Folder Include="cert\android\" />
   </ItemGroup>
 </Project>

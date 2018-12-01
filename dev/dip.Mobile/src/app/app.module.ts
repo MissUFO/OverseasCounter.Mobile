@@ -10,12 +10,16 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+//plugins
 import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { BackgroundFetch, BackgroundFetchConfig } from '@ionic-native/background-fetch/ngx';
 import { Facebook } from '@ionic-native/facebook/ngx';
 import { Push, PushObject, PushOptions } from '@ionic-native/push/ngx';
+
+//global constants
+import { GlobalService } from "./global.service";
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,12 +29,14 @@ import { Push, PushObject, PushOptions } from '@ionic-native/push/ngx';
     IonicModule.forRoot(),
     AppRoutingModule, 
     HttpClientModule,
+    BrowserModule,
     IonicStorageModule.forRoot()
   ],
   providers: [
     StatusBar,
     SplashScreen,
     Geolocation,
+    GlobalService,
     BackgroundFetch,
     Facebook,
     Push,

@@ -1,3 +1,4 @@
+//system
 import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 
@@ -5,21 +6,23 @@ import { IonicNativePlugin } from '@ionic-native/core';
 
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-
 import { ActivatedRoute, Router } from '@angular/router';
+
+//plugins
 import { Storage } from '@ionic/storage';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { BackgroundFetch, BackgroundFetchConfig } from '@ionic-native/background-fetch/ngx';
 import { Facebook } from '@ionic-native/facebook/ngx';
+import { Push, PushObject, PushOptions } from '@ionic-native/push/ngx';
 
+//services
 import { User } from './_interfaces/user';
 import { UserGeoLocation } from './_interfaces/usergeolocation';
 import { UserAccount } from './_interfaces/useraccount';
 
+import { SettingsService } from './_services/settings.service';
 import { UserService } from './_services/user.service';
 import { GeoService } from './_services/geo.service';
-
-import { Push, PushObject, PushOptions } from '@ionic-native/push/ngx';
 
 @Component({
   selector: 'app-root',
@@ -39,19 +42,22 @@ export class AppComponent {
 
     public userService: UserService, 
     public geoService: GeoService, 
+    public settingsService: SettingsService, 
     private push: Push
   ) 
   {
       this.initializeApp();
-      this.initializePushNotification();
+      //this.initializePushNotification();
   }
 
-  initializeApp() {
+    initializeApp() {
 
     this.platform.ready().then(() => {
 
         this.statusBar.styleDefault();
         this.splashScreen.hide();
+
+        this.getSettings();
 
         this.startBackgroundProcess();
         this.runBackgroundTask();
@@ -213,4 +219,15 @@ export class AppComponent {
           return location;
       });
   }
+
+  async getSettings()
+    {
+
+        return this.settingsService.getList()
+            .then(data => {
+               return data;
+          });
+    }
 }
+
+
